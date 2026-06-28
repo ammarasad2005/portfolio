@@ -1,0 +1,263 @@
+======================================================================
+DATA FILES
+======================================================================
+
+--- src/data/beats.ts ---
+  | beat-1-arrival
+  | Arrival
+  | A curious engineer\nat a quiet observatory,\ncharting constellations of work.
+  | Scroll to enter. ↓
+  | Chapter 1: Arrival at the observatory
+  | beat-2-introduction
+  | Introduction
+  | m Ammar Asad. I build software the way I observe the sky — slowly, carefully, and with a notebook nearby.
+  | Chapter 2: Introduction — who is the observer
+  | beat-3-exploration
+  | Exploration
+  | Each constellation is a project. Scroll to fly closer. Hover to preview. Click to focus.
+  | Chapter 3: Exploration — how to use the telescope
+  | beat-4-projects
+  | Projects
+  | Constellations of work — three pillars, seven projects.
+  | Chapter 4: Projects — constellations of work
+  | beat-5-technical
+  | Technical
+  | The stack, charted by use. Bright stars = daily tools. Dim stars = I\
+  | re not my default.
+  | Chapter 5: Technical credibility — the engineering stack
+  | beat-6-personality
+  | Personality
+  | When I
+  | m listening — or writing.
+  | Chapter 6: Personality — beyond code
+  | beat-7-future
+  | Future
+  | What I want to build next.
+  | Chapter 7: Future ambitions
+  | beat-8-contact
+  | Contact
+  | Thank you for observing.
+  | Chapter 8: Contact — how to reach the observer
+
+--- src/data/projects.ts ---
+  | mobile
+  | complete
+  | building
+  | early
+  | exam-table-blueprint
+  | drama-ghar-rubric
+  | hamara-rozgar-pipeline
+  | glucoguard-pipeline
+  | internship-finder-workflow
+  | primary
+  | ghost
+  | planet
+  | binary
+  | nebula
+  | star
+  | satellite
+  | comet
+  | speck
+  | exam-table
+  | FAST Isb Utilities
+  | The unified campus companion for FAST NUCES Islamabad
+  | ,
+    status:
+  | ,
+    stackChips: [
+  | ,
+  | ,
+    ],
+    body:
+  | ,
+    engineeringNote:
+  | ,
+        href:
+  | ,
+        variant:
+  | ,
+    deepDive:
+  | ,
+    bodyType:
+  | ,
+    title:
+  | ,
+    subtitle:
+  | ,
+    pillar:
+  | s informal economy
+  | ,
+    badge:
+  | s 33M diabetics who can
+  | : [-6, 0.5, -4],
+  | : [-2, -0.5, -2],
+  | : [2, 0.8, -1],
+  | : [6, -0.3, -3],
+  | : [4, 2.2, -6],
+
+--- src/data/stack-map.ts ---
+  | ./projects
+  | only repo with E2E
+  | React
+  | , repoCount: 4, pillar:
+  | , repoCount: 5, pillar:
+  | , repoCount: 3, pillar:
+  | , repoCount: 2, pillar:
+  | , repoCount: 1, pillar:
+
+======================================================================
+DOM COMPONENTS
+======================================================================
+
+--- src/components/dom/intro-panel.tsx ---
+  | The Observer
+  | I'm Muhammad Ammar Asad — a full-stack web developer in
+              Islamabad, building software for communities I'm part of,
+              mostly in Pakistan.
+  | I specialize in end-to-end web apps with TypeScript, React, Next.js,
+              Node.js, and PostgreSQL — with hands-on work in REST APIs, OAuth 2.0,
+              serverless backends, and third-party integrations like Google Maps
+              and Google Classroom.
+  | Seeking a full-stack development internship. Open to Big Tech and
+                open-source research roles.
+
+--- src/components/dom/exploration-cues.tsx ---
+  | Exploration
+  | Each constellation is a project.
+  | Scroll to fly closer. Hover to preview. Click to focus.
+
+--- src/components/dom/personality-panel.tsx ---
+  | Beyond Code
+  | Soundtrack · Brian Eno — Apollo
+  | When I'm not building, I'm listening — or writing.
+  | I rewrote the Drama-Ghar navigation three times because the
+              transitions felt off-beat. The fourth attempt finally had a
+              downbeat. Music taught me to hear that.
+  | Writing is how I find out what I think. If I can't explain it
+              in a paragraph, I don't understand it yet.
+  | "First version of hamara-rozgar shipped in 4 hours. It was wrong. I rewrote it in 3 days."
+  | — commit history, June 2026
+  | Community
+  | 16 hours volunteering as a literacy and maths tutor for
+                underprivileged students via Karwaan-e-Mudabbir's non-formal
+                education program (Sep–Dec 2024).
+  | Competition
+  | Competed in the FAST Problem Solving Competition (FPSC), Winter
+                2025 — a competitive programming challenge.
+
+--- src/components/dom/future-panel.tsx ---
+  | What's Next
+  | What I want to build next.
+  | Target employers: Google, OpenAI, Anthropic, Mozilla, CNCF, academic labs.
+  | Short-term
+  | Software engineering internship at a strong tech company. I want to learn how production systems scale.
+  | Mid-term
+  | Contribute to open-source agentic AI tooling. Mature hamara-rozgar and Internship-Finder into production-ready systems.
+  | Long-term
+  | Bring agentic AI to Pakistan
+
+--- src/components/dom/contact-panel.tsx ---
+  | Dawn
+  | Thank you for observing.
+  | If you'd like to talk — about an internship, a collaboration, or
+          an idea — I'd be glad to hear from you.
+  | Muhammad Ammar Asad
+  | Full-stack web developer · Islamabad, Pakistan
+  | Email
+  | ammarasad321993@gmail.com
+  | GitHub
+  | github.com/ammarasad2005
+  | LinkedIn
+  | linkedin.com/in/muhammad-ammar-asad
+  | Resume / CV
+  | PDF — 1 page
+
+--- src/components/dom/loading-screen.tsx ---
+  | = 1 ? 1 : 0;
+
+  return (
+  | Ammar Asad — Portfolio
+
+--- src/components/dom/stack-map-overlay.tsx ---
+  | b.repoCount - a.repoCount);
+
+  return (
+  | Technical Credibility
+  | The stack, charted by use.
+  | Bright stars = daily tools. Dim stars = I've shipped them,
+            but they're not my default.
+  | = 2 ? 2 : 1;
+              const opacity = 0.4 + (entry.repoCount / 5) * 0.6;
+              return (
+  | Engineering Rigor
+
+--- src/components/dom/hero-text.tsx ---
+  | s.hasVisited);
+
+  // Returning visitors skip the long fade — they get to "Ready" immediately.
+  const baseDelay = hasVisited ? 0.1 : 0.4;
+
+  const lines = [
+    'A curious engineer',
+    'at a quiet observatory,',
+    'charting constellations of projects.',
+  ];
+
+  return (
+  | Scroll to enter. ↓
+
+======================================================================
+PAGE.TX SR-ONLY FALLBACK
+======================================================================
+  | Muhammad Ammar Asad — Full-Stack Web Developer
+  | Full-stack web developer in Islamabad, Pakistan. Seeking a full-stack development internship.
+  | Arrival
+  | A curious engineer at a quiet observatory, charting constellations of work.
+  | Scroll to enter.
+  | Introduction
+  | I'm Muhammad Ammar Asad — a full-stack web developer in Islamabad,
+          building software for communities I'm part of, mostly in Pakistan.
+          I specialize in end-to-end web apps with TypeScript, React, Next.js,
+          Node.js, and PostgreSQL — with hands-on work in REST APIs, OAuth 2.0,
+          serverless backends, and third-party integrations like Google Maps
+          and Google Classroom.
+  | Seeking a full-stack development internship. Open to Big Tech and open-source research roles.
+  | Exploration
+  | Each constellation is a project. Scroll to fly closer. Hover to preview. Click to focus.
+  | The Builder (Web pillar). The Agent (AI / ML pillar). The Hand (Mobile pillar).
+  | Projects — three pillars, seven projects
+  | Repository:
+  | The stack, charted by use
+  | Bright stars = daily tools. Dim stars = I've shipped them, but
+          they're not my default.
+  | Engineering rigor: 2/7 repos tested (Playwright E2E in Exam-Table, scratch tests in hamara-rozgar). 3/7 repos use GitHub Actions for scheduled tasks and background workers, not push-triggered CI/CD. Honest gap: no test/build/deploy pipelines on push or PR yet. Working on it.
+  | Personality — beyond code
+  | When I'm not building, I'm listening — or writing.
+  | I rewrote the Drama-Ghar navigation three times because the transitions
+          felt off-beat. The fourth attempt finally had a downbeat. Music taught
+          me to hear that.
+  | Writing is how I find out what I think. If I can't explain it in a paragraph, I don't understand it yet.
+  | Soundtrack: Brian Eno — Apollo.
+  | What I want to build next
+  | Short-term: Software engineering internship at a strong tech company. I want to learn how production systems scale.
+  | Mid-term: Contribute to open-source agentic AI tooling. Mature hamara-rozgar and Internship-Finder into production-ready systems.
+  | Long-term: Bring agentic AI to Pakistan's informal economy at scale — as a founder or inside a research lab.
+  | Target employers: Google, OpenAI, Anthropic, Mozilla, CNCF, academic labs.
+  | Thank you for observing.
+  | If you'd like to talk — about an internship, a collaboration, or
+          an idea — I'd be glad to hear from you.
+  | Email: ammarasad321993@gmail.com
+  | GitHub: github.com/ammarasad2005
+  | LinkedIn: linkedin.com/in/muhammad-ammar-asad
+  | Resume / CV (PDF)
+  | Muhammad Ammar Asad — Full-stack web developer · Islamabad, Pakistan
+
+======================================================================
+METADATA
+======================================================================
+  | title: Muhammad Ammar Asad — Full-Stack Web Developer
+  | title: Muhammad Ammar Asad — Full-Stack Web Developer
+  | title: Muhammad Ammar Asad — Full-Stack Web Developer
+  | description: Full-stack web developer in Islamabad, Pakistan. Specializing in end-to-end web apps with TypeScript, React, Next.js, Node.js, and PostgreSQL — REST APIs, OAuth 2.0, serverless backends, and third-party integrations. Seeking a full-stack development internship.
+  | description: Full-stack web developer in Islamabad, Pakistan. End-to-end web apps with TypeScript, React, Next.js, Node.js, and PostgreSQL.
+  | description: Full-stack web developer in Islamabad, Pakistan. End-to-end web apps with TypeScript, React, Next.js.

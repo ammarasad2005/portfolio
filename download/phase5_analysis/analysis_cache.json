@@ -1,0 +1,2098 @@
+[
+  {
+    "slug": "01_exam_table",
+    "name": "Exam-Table",
+    "path": "/home/z/my-project/repos/Exam-Table",
+    "total_files": 172,
+    "languages": {
+      "TypeScript (React)": 52,
+      "Other": 40,
+      "TypeScript": 40,
+      "JSON": 21,
+      "Python": 6,
+      "Markdown": 4,
+      "JavaScript": 4,
+      "JavaScript (ESM)": 1,
+      "Text": 1,
+      "JavaScript (React)": 1,
+      "SQL": 1,
+      "CSS": 1
+    },
+    "categories": {
+      "docs": 5,
+      "config": 21,
+      "other": 40,
+      "source": 105,
+      "test": 1
+    },
+    "lines_by_language": {
+      "TypeScript (React)": 20614,
+      "TypeScript": 4809,
+      "Python": 2693,
+      "CSS": 999,
+      "JavaScript": 592,
+      "JavaScript (React)": 541,
+      "SQL": 129,
+      "JavaScript (ESM)": 15
+    },
+    "total_source_lines": 30392,
+    "largest_files": [
+      {
+        "path": "public/logo/logo.png",
+        "size": 1963014,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "Screenshots/faculty_page_desktop.png",
+        "size": 482278,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "package-lock.json",
+        "size": 372588,
+        "language": "JSON",
+        "category": "config"
+      },
+      {
+        "path": "src/app/lost-found/page.tsx",
+        "size": 277667,
+        "language": "TypeScript (React)",
+        "category": "source"
+      },
+      {
+        "path": "public/logo/icon.png",
+        "size": 250085,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "Screenshots/semester_page_desktop.png",
+        "size": 161954,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "Screenshots/lost_found_page_desktop.png",
+        "size": 147142,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "Screenshots/landing_page_desktop.png",
+        "size": 140593,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "Screenshots/optimizer_desktop.png",
+        "size": 121525,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "Screenshots/rooms_detail_mobile.png",
+        "size": 117658,
+        "language": "Other",
+        "category": "other"
+      }
+    ],
+    "key_files_found": {
+      "README.md": "README.md",
+      "package.json": "package.json",
+      "package-lock.json": "package-lock.json",
+      "tsconfig.json": "tsconfig.json",
+      "next.config.js": "next.config.js",
+      "tailwind.config.ts": "tailwind.config.ts",
+      "postcss.config.js": "postcss.config.js",
+      "LICENSE": "LICENSE",
+      "vercel.json": "vercel.json"
+    },
+    "key_file_contents": {
+      "README.md": "<div align=\"center\">\n\n<img src=\"public/logo/logo.png\" alt=\"FAST Isb Utilities Logo\" width=\"80\" />\n\n# FAST Isb Utilities\n\n**The unified campus companion for FAST NUCES Islamabad**\n\nNo more digging through messy Google Sheets. No more searching emails for exam schedules. No more peeking into rooms to check if they're free. Everything you need — in one place.\n\n[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://fast-nuces.vercel.app/)\n[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)](https://nextjs.org/)\n[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)\n[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-green?style=flat-square&logo=supabase)](https://supabase.com/)\n[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)\n\n</div>\n\n---\n\n## Navigation\n- [The Problem](#the-problem)\n- [What Is FAST Isb Utilities?](#what-is-fast-isb-utilities)\n  - [Who Is It For?](#who-is-it-for)\n- [Screenshots](#screenshots)\n  - [Landing Page](#landing-page)\n- [Features](#features)\n  - [📅 Timetable Viewer](#timetable-viewer)\n  - [📝 Exam Schedule Finder](#exam-schedule-finder)\n  - [🎯 Custom Exams Builder](#custom-exams-builder)\n  - [🗓️ Custom Timetable Builder](#custom-timetable-builder)\n  - [🧠 Timetable Optimizer](#timetable-optimizer)\n  - [🚪 Free Rooms Finder](#free-rooms-finder)\n  - [👨‍🏫 Faculty Directory](#faculty-directory)\n  - [🎪 Campus Events Calendar](#campus-events-calendar)\n  - [📆 Semester Schedule](#semester-schedule)\n  - [📦 Lost & Found](#lost-found)\n  - [🏠 Configuration & Home Page](#configuration-home-page)\n  - [🌗 Dark Mode & Theming](#dark-mode-theming)\n  - [⌨️ Keyboard Shortcuts](#keyboard-shortcuts)\n  - [📤 Export Options](#export-options)\n- [How It Works](#how-it-works)\n  - [User Workflow](#user-workflow)\n  - [Custom Course Workflow](#custom-course-workflow)\n  - [Timetable Optimizer Workflow](#timetable-optimizer-workflow)\n  - [Data Flow](#data-flow)\n- [Tech Stack](#tech-stack)\n- [Project Structure](#project-structure)\n- [Routes](#routes)\n- [Getting Started](#getting-started)\n  - [Prerequisites](#prerequisites)\n  - [Installation](#installation)\n- [Available Scripts](#available-scripts)\n- [Data Pipeline](#data-pipeline)\n  - [Exam Schedule Pipeline](#exam-schedule-pipeline)\n  - [Timetable Pipeline](#timetable-pipeline)\n  - [Campus Events Pipeline](#campus-events-pipeline)\n  - [Faculty & Semester Data](#faculty-semester-data)\n- [Scheduled Automation](#scheduled-automation)\n  - [Vercel Cron Jobs (Production)](#vercel-cron-jobs-production)\n  - [GitHub Actions (Recommended for Data Updates)](#github-actions-data-updates)\n- [Database Schema](#database-schema)\n  - [`lost_found_items`](#lost-found-items)\n  - [`lost_found_claims`](#lost-found-claims)\n  - [`campus_feedback`](#campus-feedback)\n- [Design Highlights](#design-highlights)\n- [License & Usage](#license-usage)\n  - [What You Can Do](#what-you-can-do)\n  - [What You Cannot Do](#what-you-cannot-do)\n- [Contributing](#contributing)\n- [License](#license)\n\n\n<a id=\"the-problem\"></a>\n## The Problem\n\nLife at FAST NUCES Islamabad comes with a set of avoidable daily frustrations that every student knows too well:\n\n- **Messy Timetables** — The official timetable is a single, colossal Google Sheet crammed with every section of every department of every batch. Finding your own schedule means scrolling endlessly and squinting through a wall of cells. It's neither quick to open on your phone, nor pleasant to navigate on a desktop.\n\n- **Clustered Exam Schedules** — Exam dates arrive as a dense Excel file listing every course for every batch. Students have to manually search for their own papers, and those taking custom or cross-department courses are left piecing things together themselves.\n\n- **No Room Availability Info** — Need a quiet place to study? Want to find an empty lab? Your only option is physically walking to the room and peeking in. There's no centralized way to know which rooms are free at any given time.\n\n- **Faculty Info Is a Scavenger Hunt** — Looking for a professor's office? You're walking down hallways checking nameplates on every door. There's no publicly accessible directory with office rooms, emails, or profiles.\n\n- **Campus Events Buried in Emails** — Events are announced via email blasts and WhatsApp groups. By the time mid-semester rolls around, that event notification is buried under dozens of other messages, and you've missed the deadline.\n\n- **Semester Schedule? Good Luck** — The academic calendar with key dates, sessional schedules, and holidays is shared once at the start of the semester in an email or group chat, never to be found again when you actually need it.\n\n- **Lost Items, No Recovery System** — Lose a laptop charger in the lab? Find someone's ID card in the cafeteria? There's no campus-wide system to report or recover lost items. It's all word of mouth.\n\n- **No Way to Optimize Your Timetable** — Students taking courses across different departments or with elective choices have no way to find clash-free section combinations without manually cross-referencing multiple schedules.\n\n**FAST Isb Utilities** exists to solve every single one of these problems.\n\n---\n\n<a id=\"what-is-fast-isb-utilities\"></a>\n## What Is FAST Isb Utilities?\n\nFAST Isb Utilities is an all-in-one web platform purpose-built for the students of FAST NUCES Islamabad. It consolidates every essential campus utility — timetables, exam schedules, room availability, faculty directory, campus events, semester calendar, lost & found, and even a timetable optimizer — into a single, beautifully designed, mobile-first web application.\n\nInstead of juggling between Google Sheets, email threads, WhatsApp groups, and physical scavenger hunts, students get everything they need in one place, accessible from any device, at any time.\n\n<a id=\"who-is-it-for\"></a>\n### Who Is It For?\n\n- **Students** of FAST NUCES Islamabad across all batches (2022–2025), departments (CS, AI, DS, CY, SE, EE, CE, SH, AF, MS), and schools (FSC, FSM, FSE) — whether you're following the standard cohort path or taking custom courses across departments.\n- **Faculty & Staff** who need quick access to room availability, colleague directories, or campus event schedules.\n- **Campus Administration** looking for a modern, student-friendly alternative to scattered Google Sheets and Excel files.\n\n---\n\n<a id=\"screenshots\"></a>\n## Screenshots\n\n<a id=\"landing-page\"></a>\n### Landing Page\n\n<p align=\"center\">\n  <img src=\"Screenshots/landing_page_desktop.png\" alt=\"Landing Page - Desktop\" width=\"65%\" />\n  &nbsp;&nbsp;\n  <img src=\"Screenshots/landing_page_mobile.png\" alt=\"Landing Page - Mobile\" width=\"25%\" />\n</p>\n\n---\n\n<a id=\"features\"></a>\n## Features\n\n<a id=\"timetable-viewer\"></a>\n### 📅 Timetable Viewer\n\nView your weekly class schedule filtered by batch, department, and section. No more scrolling through a monolithic Google Sheet with hundreds of rows.\n\n- **List View & Grid View** — Switch between a day-grouped list (with today pinned first) and a visual time-block calendar.\n- **Section Override** — Swap individual courses to a different section if you're attending a cross-section class.\n- **Course Removal** — Hide courses you've dropped or aren't taking.\n- **Elective Handling** — Electives and \"other\" courses are separated into their own expandable section. Special handling for 2022 batch elective groups (G-I, G-II, G-III).\n- **Repeat Courses Toggle** — Include or exclude repeat courses with a single toggle.\n- **Conflict Detection** — Overlapping classes are automatically highlighted.\n- **Export** — Download as CSV, Excel (.xlsx), ICS calendar, or PNG image.\n\n<p align=\"center\">\n  <img src=\"Screenshots/timetable_page_desktop.png\" alt=\"Timetable Viewer - Desktop\" width=\"65%\" />\n  &nbsp;&nbsp;\n  <img src=\"Screenshots/timetable_page_mobile.png\" alt=\"Timetable Viewer - Mobile\" width=\"25%\" />\n</p>\n\n---\n\n<a id=\"exam-schedule-finder\"></a>\n### 📝 Exam Schedule Finder\n\nFind your exam dates instantly. Filter by batch, school, and department — or search by course code and name.\n\n- **Day-Grouped Timeline** — Exams are organized chronologically by date, so you always know what's next.\n- **Search** — Live search across course codes and names.\n- **Exam Detail Panel** — Tap any exam to see full details in a slide-up panel (mobile) or side panel (desktop).\n- **Export** — Download your filtered exam schedule as CSV, Excel, or ICS.\n\n<p align=\"center\">\n  <img src=\"Screenshots/exam_schedule_desktop.png\" alt=\"Exam Schedule - Desktop\" width=\"65%\" />\n  &nbsp;&nbsp;\n  <img src=\"Screenshots/exam_schedule_mobile.png\" alt=\"Exam Schedule - Mobile\" width=\"25%\" />\n</p>\n\n---\n\n<a id=\"custom-exams-builder\"></a>\n### 🎯 Custom Exams Builder\n\nTaking courses across multiple departments or batches? Build your own custom exam schedule by selecting individual courses from any combination of batch, stream, and department.\n\n- **Dynamic Row Editor** — Add as many courses as you need, each with its own batch/stream/department selectors.\n- **Bundle System** — Save, name, and reuse course sets so you don't have to re-enter them every time.\n- **Match Hints** — Each row shows how many exam slots were found for your selection, so you know if you've picked the right course.\n- **Export** — Same export options as the standard exam finder.\n\n<p align=\"center\">\n  <img src=\"Screenshots/custom_exams_desktop.png\" alt=\"Custom Exams - Desktop\" width=\"65%\" />\n  &nbsp;&nbsp;\n  <img src=\"Screenshots/custom_exams_mobile.png\" alt=\"Custom Exams - Mobile\" width=\"25%\" />\n</p>\n\n---\n\n<a id=\"custom-timetable-builder\"></a>\n### 🗓️ Custom Timetable Builder\n\nSame idea as Custom Exams, but for your weekly class schedule. Mix and match courses from any department and section.\n\n- **Course Selection** — Pick batch, department, category (regular/repeat), course, and section for each row.\n- **Bundle System** — Save named bundles of courses and load them anytime.\n- **Conflict Detection** — Clashing time slots are immediately flagged.\n- **Grid View** — Visual time-block calendar showing your custom schedule.\n- **Today Highlight** — Current day highlighted with a gradient border.\n- **Export** — CSV, Excel, ICS, and PNG image exports.\n\n<p align=\"center\">\n  <img src=\"Screenshots/custom_timetable_desktop.png\" alt=\"Custom Timetable - Desktop\" width=\"65%\" />\n  &nbsp;&nbsp;\n  <img src=\"Screenshots/custom_timetable_mobile.png\" alt=\"Custom Timetable - Mobile\" width=\"25%\" />\n</p>\n\n---\n\n<a id=\"timetable-optimizer\"></a>\n### 🧠 Timetable Optimizer\n\nThe crown jewel for students who want the perfect schedule. Enter your courses, and the optimizer uses a backtracking algorithm to find all clash-free section combinations — then ranks them by how comfortable your week would be.\n\n- **Optimization Goals** — Choose from four modes:\n  - **Maximize Off-Days** — Crams classes into the fewest days possible.\n  - **Balanced (Recommended)** — Maximizes off-days, but adds an extra campus day if it avoids a brutal workload.\n  - **Minimize Workload** — Prioritizes balanced days, avoids heavy gaps, and ensures time for midday breaks.\n  - **Custom Weights** — Fine-tune exactly how much you care about early mornings, late afternoons, gaps, consecutive classes, midday breaks, and off-days using sliders.\n- **Section Locking** — Lock specific sections for courses where you have no choice, and optimize the rest.\n- **Comfort Score** — Each result shows a comfort score (0–100%) factoring in early classes, late classes, missed midday breaks, bad gaps, and consecutive class fatigue.\n- **Fit Score** — Relative ranking across all valid combinations.\n- **Preview to Custom Timetable** — One-click to send any optimized schedule to the Custom Timetable Builder for full editing and export.\n\n<p align=\"center\">\n  <img src=\"Screenshots/optimizer_desktop.png\" alt=\"Timetable Optimizer - Desktop\" width=\"65%\" />\n  &nbsp;&nbsp;\n  <img src=\"Screenshots/optimizer_mobile.png\" alt=\"Timetable Optimizer - Mobile\" width=\"25%\" />\n</p>\n\n---\n\n<a id=\"free-rooms-finder\"></a>\n### 🚪 Free Rooms Finder\n\nFind empty rooms across campus without leaving your seat. The timetable data is inverted to show which rooms are free at any given time.\n\n- **Specific Slot Mode** — Pick a day and time slot to see which rooms are available right now.\n- **Full Calendar Mode** — Weekly grid showing room availability across all standard time slots.\n- **Vacancy Status**:\n  - 🟢 **Fully Vacant** — Completely free for the entire slot.\n  - 🟡 **Partially Vacant** — At least 30 minutes of free time within the slot.\n- **Room Grouping** — Rooms organized by block (A, B, C, D, Labs) for quick navigation.\n- **Room Detail Panel** — Tap any room to see its full weekly occupancy schedule.\n\n<p align=\"center\">\n  <img src=\"Screenshots/rooms_page_desktop.png\" alt=\"Free Rooms - Desktop\" width=\"65%\" />\n  &nbsp;&nbsp;\n  <img src=\"Screenshots/rooms_page_mobile.png\" alt=\"Free Rooms - Mobile\" width=\"25%\" />\n</p>\n\n---\n\n<a id=\"faculty-directory\"></a>\n### 👨‍🏫 Faculty Directory\n\nA searchable, filterable directory of all FAST Islamabad faculty members. No more wandering the corridors looking for an office.\n\n- **9 Departments** — CS, AI & DS, SE, Cybersecurity, EE, CE, Sciences & Humanities, Accounting & Finance, Management Sciences.\n- **Full-Text Search** — Search by name, title, email, or office room.\n- **Department Filter** — Sidebar (desktop) or horizontal pills (mobile) to filter by department.\n- **Grid & List Views** — Toggle between card grid and compact list (mobile).\n- **Faculty Cards** — Each card shows name, title, department accent color, office, email, and profile link.\n- **Faculty Detail** — Expanded view with full information.\n\n<p align=\"center\">\n  <img src=\"Screenshots/faculty_page_desktop.png\" alt=\"Faculty Directory - Desktop\" width=\"65%\" />\n  &nbsp;&nbsp;\n  <img src=\"Screenshots/faculty_page_mobile.png\" alt=\"Faculty Directory - Mobile\" width=\"25%\" />\n</p>\n\n---\n\n<a id=\"campus-events-calendar\"></a>\n### 🎪 Campus Events Calendar\n\nNever miss a campus event again. Events are scraped from the official SLATE portal and displayed in a beautiful monthly calendar.\n\n- **Monthly Calendar View** — Navigate month by month to see what's happening.\n- **Ongoing Events** — Real-time detection of events happening right now (auto-refreshes every 60 seconds).\n- **Upcoming Snapshot** — Quick view of the next 10 upcoming events.\n- **Stats** — At-a-glance counts for this month, next month, and total tracked events.\n- **ICS Download** — Add any event directly to your personal calendar.\n\n<p align=\"center\">\n  <img src=\"Screenshots/events_page_desktop.png\" alt=\"Campus Events - Desktop\" width=\"65%\" />\n  &nbsp;&nbsp;\n  <img src=\"Screenshots/events_page_mobile.png\" alt=\"Campus Events - Mobile\" width=\"25%\" />\n</p>\n\n---\n\n<a id=\"semester-schedule\"></a>\n### 📆 Semester Schedule\n\nThe full academic calendar with key dates, holidays, and monthly grids — always accessible, never buried in email.\n\n- **Key Dates Timeline** — Animated, staggered timeline of important dates (sessionals, results, deadlines, finals).\n- **Date Badges** — Color-coded badges: Start, Deadline, Sessional 1, Results, Sessional 2, Finals.\n- **Monthly Calendar Grids** — Color-coded days: holidays (national & religious), class days, exam days, deadlines.\n- **Academic Ranges** — Visual representation of the semester's academic phases.\n- **Holidays Section** — Clearly listed with national/religious distinction.\n\n<p align=\"center\">\n  <img src=\"Screenshots/semester_page_desktop.png\" alt=\"Semester Schedule - Desktop\" width=\"65%\" />\n  &nbsp;&nbsp;\n  <img src=\"Screenshots/semester_page_mobile.png\" alt=\"Semester Schedule - Mobile\" width=\"25%\" />\n</p>\n\n---\n\n<a id=\"lost-found\"></a>\n### 📦 Lost & Found\n\nA complete lost-and-found system for campus. Report items, browse listings, submit claims, and resolve returns — all in one place.\n\n- **8 Categories** — Electronics, Documents, Accessories, Clothing, Keys, Bags, Books, Other.\n- **Report Items** — Submit with photo (auto-compressed), campus zone location, date, and description.\n- **Privacy-First** — Found item locations are hidden until you submit a claim, preventing exploitation.\n- **Claims System** — Submit claims with your description and contact info.\n- **Smart Search** — AI-powered search (GPT-4o-mini) for natural language queries like \"blue USB drive near cafeteria\".\n- **Bookmarks** — Save items to check back on later.\n- **Urgency Markers** — Flag high-priority items.\n- **Resolution Workflow** — Mark items as resolved with optional proof photo.\n- **Auto-Expiry** — Items older than 30 days are flagged; older than 60 days are archived.\n- **Onboarding** — First-visit tips carousel for new users.\n\n<p align=\"center\">\n  <img src=\"Screenshots/lost_found_page_desktop.png\" alt=\"Lost & Found - Desktop\" width=\"65%\" />\n  &nbsp;&nbsp;\n  <img src=\"Screenshots/lost_found_page_mobile.png\" alt=\"Lost & Found - Mobile\" width=\"25%\" />\n</p>\n\n---\n\n<a id=\"configuration-home-page\"></a>\n### 🏠 Configuration & Home Page\n\nThe central hub where you pick your feature, set your filters, and configure your experience. Your preferences are saved locally so you never have to re-enter them.\n\n- **Feature Selector** — Quick toggle between Timetable, Exams, Rooms, and Faculty.\n- **Mode Selector** — Default Courses or Custom Courses mode.\n- **Dynamic Filters** — Batch, school, department, and section selectors that adapt to your chosen feature.\n- **Preferences Persistence** — All settings saved to localStorage for your next visit.\n- **Desktop Ticker** — \"Next Up\" widget showing your upcoming classes.\n\n<p align=\"center\">\n  <img src=\"Screenshots/home_page_desktop.png\" alt=\"Home / Configuration - Desktop\" width=\"65%\" />\n  &nbsp;&nbsp;\n  <img src=\"Screenshots/home_page_mobile.png\" alt=\"Home / Configuration - Mobile\" width=\"25%\" />\n</p>\n\n---\n\n<a id=\"dark-mode-theming\"></a>\n### 🌗 Dark Mode & Theming\n\nThe entire platform supports light and dark themes with a single tap. System preference is detected automatically. Each department has its own accent color throughout the app for instant visual recognition.\n\n---\n\n<a id=\"keyboard-shortcuts\"></a>\n### ⌨️ Keyboard Shortcuts\n\n| Shortcut | Action |\n|----------|--------|\n| `Ctrl + Shift + A` | Open Admin Dashboard |\n| `Ctrl + Shift + Z` | Go Back |\n\n---\n\n<a id=\"export-options\"></a>\n### 📤 Export Options\n\nEvery schedule view supports multiple export formats:\n\n| Format | Use Case |\n|--------|----------|\n| **CSV** | Open in any spreadsheet app |\n| **Excel (.xlsx)** | Formatted spreadsheet with styled headers |\n| **ICS** | Import into Google Calendar, Apple Calendar, Outlook |\n| **PNG Image** | Share as an image via WhatsApp, social media |\n\n---\n\n<a id=\"how-it-works\"></a>\n## How It Works\n\n<a id=\"user-workflow\"></a>\n### User Workflow\n\n```\n1.  Open the app → Land on the home screen with feature cards\n2.  Pick a feature (Timetable, Exams, Rooms, Faculty, etc.)\n3.  Configure filters (batch, department, section) — saved locally for next visit\n4.  Browse results → Tap items for detail views\n5.  Export or share your filtered schedule\n```\n\n<a id=\"custom-course-workflow\"></a>\n### Custom Course Workflow\n\n```\n1.  Choose \"Custom Courses\" mode instead of \"Default Courses\"\n2.  Add rows for each course you're taking (mix batches/departments freely)\n3.  Save as a named \"Bundle\" for quick access later\n4.  View your personalized schedule → Export\n```\n\n<a id=\"timetable-optimizer-workflow\"></a>\n### Timetable Optimizer Workflow\n\n```\n1.  Open Timetable Optimizer\n2.  Enter your courses (or use Default mode to verify your department's courses)\n3.  Choose an optimization goal \n\n... [truncated for brevity] ...",
+      "package.json": "{\n  \"name\": \"fsc-exams\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"prebuild\": \"ts-node scripts/parse-excel.ts\",\n    \"build\": \"next build\",\n    \"dev\": \"ts-node scripts/parse-excel.ts && next dev\",\n    \"start\": \"next start\",\n    \"type-check\": \"tsc --noEmit\",\n    \"lint\": \"next lint\",\n    \"timetable:update\": \"python3 all_courses_schedule.py && mkdir -p public/data && cp timetable.json public/data/timetable.json\",\n    \"events:scrape\": \"python3 scripts/scrape_slate.py\",\n    \"events:filter\": \"python3 scripts/filter_events.py\",\n    \"events:update\": \"npm run events:scrape && npm run events:filter\"\n  },\n  \"dependencies\": {\n    \"@hookform/resolvers\": \"^5.2.2\",\n    \"@radix-ui/react-accordion\": \"^1.2.12\",\n    \"@radix-ui/react-alert-dialog\": \"^1.1.15\",\n    \"@radix-ui/react-aspect-ratio\": \"^1.1.8\",\n    \"@radix-ui/react-avatar\": \"^1.1.11\",\n    \"@radix-ui/react-context-menu\": \"^2.2.16\",\n    \"@radix-ui/react-dialog\": \"^1.1.15\",\n    \"@radix-ui/react-dropdown-menu\": \"^2.1.16\",\n    \"@radix-ui/react-hover-card\": \"^1.1.15\",\n    \"@radix-ui/react-label\": \"^2.1.8\",\n    \"@radix-ui/react-menubar\": \"^1.1.16\",\n    \"@radix-ui/react-navigation-menu\": \"^1.2.14\",\n    \"@radix-ui/react-popover\": \"^1.1.15\",\n    \"@radix-ui/react-progress\": \"^1.1.8\",\n    \"@radix-ui/react-radio-group\": \"^1.3.8\",\n    \"@radix-ui/react-scroll-area\": \"^1.2.10\",\n    \"@radix-ui/react-select\": \"^2.2.6\",\n    \"@radix-ui/react-separator\": \"^1.1.8\",\n    \"@radix-ui/react-slider\": \"^1.3.6\",\n    \"@radix-ui/react-slot\": \"^1.2.4\",\n    \"@radix-ui/react-switch\": \"^1.2.6\",\n    \"@radix-ui/react-tabs\": \"^1.1.13\",\n    \"@radix-ui/react-toast\": \"^1.2.15\",\n    \"@radix-ui/react-toggle\": \"^1.1.10\",\n    \"@radix-ui/react-toggle-group\": \"^1.1.11\",\n    \"@radix-ui/react-tooltip\": \"^1.2.8\",\n    \"@supabase/supabase-js\": \"^2.105.4\",\n    \"@types/pg\": \"^8.20.0\",\n    \"@vercel/analytics\": \"^2.0.1\",\n    \"browser-image-compression\": \"^2.0.2\",\n    \"class-variance-authority\": \"^0.7.1\",\n    \"clsx\": \"^2.1.1\",\n    \"cmdk\": \"^1.1.1\",\n    \"embla-carousel-react\": \"^8.6.0\",\n    \"exceljs\": \"^4.4.0\",\n    \"file-saver\": \"^2.0.5\",\n    \"framer-motion\": \"^12.38.0\",\n    \"input-otp\": \"^1.4.2\",\n    \"lucide-react\": \"^1.16.0\",\n    \"next\": \"^14.2.0\",\n    \"next-themes\": \"^0.4.6\",\n    \"nodemailer\": \"^8.0.8\",\n    \"pg\": \"^8.21.0\",\n    \"react\": \"^18.3.0\",\n    \"react-day-picker\": \"^10.0.1\",\n    \"react-dom\": \"^18.3.0\",\n    \"react-hook-form\": \"^7.76.0\",\n    \"react-resizable-panels\": \"^4.11.1\",\n    \"recharts\": \"^3.8.1\",\n    \"resend\": \"^6.12.3\",\n    \"sonner\": \"^2.0.7\",\n    \"tailwind-merge\": \"^3.6.0\",\n    \"tailwindcss-animate\": \"^1.0.7\",\n    \"vaul\": \"^1.1.2\",\n    \"xlsx\": \"^0.18.5\",\n    \"zod\": \"^4.4.3\"\n  },\n  \"devDependencies\": {\n    \"@types/file-saver\": \"^2.0.7\",\n    \"@types/node\": \"^20\",\n    \"@types/nodemailer\": \"^8.0.0\",\n    \"@types/react\": \"^18\",\n    \"@types/react-dom\": \"^18\",\n    \"autoprefixer\": \"^10\",\n    \"eslint\": \"^8\",\n    \"eslint-config-next\": \"^14\",\n    \"playwright\": \"^1.59.1\",\n    \"postcss\": \"^8\",\n    \"tailwindcss\": \"^3.4\",\n    \"ts-node\": \"^10\",\n    \"typescript\": \"^5\"\n  }\n}\n",
+      "package-lock.json": "[lock file present]",
+      "tsconfig.json": "{\n  \"compilerOptions\": {\n    \"target\": \"ES2017\",\n    \"lib\": [\n      \"dom\",\n      \"dom.iterable\",\n      \"esnext\"\n    ],\n    \"allowJs\": true,\n    \"skipLibCheck\": true,\n    \"strict\": true,\n    \"noEmit\": true,\n    \"esModuleInterop\": true,\n    \"module\": \"esnext\",\n    \"moduleResolution\": \"bundler\",\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true,\n    \"jsx\": \"preserve\",\n    \"incremental\": true,\n    \"plugins\": [\n      {\n        \"name\": \"next\"\n      }\n    ],\n    \"paths\": {\n      \"@/*\": [\n        \"./src/*\"\n      ]\n    }\n  },\n  \"include\": [\n    \"next-env.d.ts\",\n    \"**/*.ts\",\n    \"**/*.tsx\",\n    \".next/types/**/*.ts\"\n  ],\n  \"exclude\": [\n    \"node_modules\"\n  ]\n}",
+      "next.config.js": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  compress: true,\n  poweredByHeader: false,\n  headers: async () => [\n    {\n      source: '/data/:path*',\n      headers: [\n        { key: 'Cache-Control', value: 'public, max-age=3600, stale-while-revalidate=86400' },\n      ],\n    },\n  ],\n};\n\nmodule.exports = nextConfig;\n",
+      "tailwind.config.ts": "import type { Config } from 'tailwindcss';\nimport tailwindcssAnimate from 'tailwindcss-animate';\n\nexport default {\n  content: ['./src/**/*.{ts,tsx}'],\n  darkMode: ['selector', '[data-theme=\"dark\"]'],\n  theme: {\n    extend: {\n      fontFamily: {\n        display: ['Instrument Serif', 'serif'],\n        body:    ['DM Sans', 'sans-serif'],\n        mono:    ['DM Mono', 'monospace'],\n        clock:   ['var(--font-clock)', 'monospace'],\n      },\n\n      colors: {\n        bg:       'var(--color-bg)',\n        raised:   'var(--color-bg-raised)',\n        subtle:   'var(--color-bg-subtle)',\n        border:   'var(--color-border)',\n        primary: {\n          DEFAULT: 'var(--color-text-primary)',\n          foreground: 'oklch(var(--primary-foreground))',\n        },\n        secondary: {\n          DEFAULT: 'var(--color-text-secondary)',\n          foreground: 'oklch(var(--secondary-foreground))',\n        },\n        tertiary: 'var(--color-text-tertiary)',\n        background: 'oklch(var(--background))',\n        foreground: 'oklch(var(--foreground))',\n        card: {\n          DEFAULT: 'oklch(var(--card))',\n          foreground: 'oklch(var(--card-foreground))',\n        },\n        popover: {\n          DEFAULT: 'oklch(var(--popover))',\n          foreground: 'oklch(var(--popover-foreground))',\n        },\n        muted: {\n          DEFAULT: 'oklch(var(--muted))',\n          foreground: 'oklch(var(--muted-foreground))',\n        },\n        accent: {\n          DEFAULT: 'oklch(var(--accent))',\n          foreground: 'oklch(var(--accent-foreground))',\n        },\n        destructive: {\n          DEFAULT: 'oklch(var(--destructive))',\n          foreground: 'oklch(var(--destructive-foreground))',\n        },\n        input: 'oklch(var(--input))',\n        ring: 'oklch(var(--ring))',\n      },\n      borderRadius: {\n        sm: 'var(--radius-sm)',\n        md: 'var(--radius-md)',\n        lg: 'var(--radius-lg)',\n        xl: 'var(--radius-xl)',\n      },\n      height: {\n        '13': '52px',\n      },\n    },\n  },\n  plugins: [tailwindcssAnimate],\n} satisfies Config;\n",
+      "postcss.config.js": "module.exports = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n};\n",
+      "LICENSE": "FAST Isb Utilities — Source-Available License\n\nCopyright (c) 2026 Ammar Asad. All rights reserved.\n\nBuilt for the FAST NUCES Islamabad student community.\n\n------------------------------------------------------------------------\n\nYou're free to read the code, run it locally, and fork it to open pull\nrequests. Contributions are welcome — I review and merge at my discretion.\n\nYou're not free to copy the codebase, lift the UI design, or reproduce\nhow things are structured and built here — in whole or in part — without\nexplicit permission from me.\n\nContributions I merge become part of this project under these same terms.\n\n------------------------------------------------------------------------\n\nlinkedin.com/in/muhammad-ammar-asad",
+      "vercel.json": "{\n  \"crons\": [\n    {\n      \"path\": \"/api/lost-found/cron/reminders\",\n      \"schedule\": \"0 5 * * 1-5\"\n    },\n    {\n      \"path\": \"/api/lost-found/cron/reminders\",\n      \"schedule\": \"0 13 * * 0\"\n    }\n  ]\n}\n"
+    },
+    "package_json": {
+      "name": "fsc-exams",
+      "version": "0.1.0",
+      "private": true,
+      "scripts": {
+        "prebuild": "ts-node scripts/parse-excel.ts",
+        "build": "next build",
+        "dev": "ts-node scripts/parse-excel.ts && next dev",
+        "start": "next start",
+        "type-check": "tsc --noEmit",
+        "lint": "next lint",
+        "timetable:update": "python3 all_courses_schedule.py && mkdir -p public/data && cp timetable.json public/data/timetable.json",
+        "events:scrape": "python3 scripts/scrape_slate.py",
+        "events:filter": "python3 scripts/filter_events.py",
+        "events:update": "npm run events:scrape && npm run events:filter"
+      },
+      "dependencies": {
+        "@hookform/resolvers": "^5.2.2",
+        "@radix-ui/react-accordion": "^1.2.12",
+        "@radix-ui/react-alert-dialog": "^1.1.15",
+        "@radix-ui/react-aspect-ratio": "^1.1.8",
+        "@radix-ui/react-avatar": "^1.1.11",
+        "@radix-ui/react-context-menu": "^2.2.16",
+        "@radix-ui/react-dialog": "^1.1.15",
+        "@radix-ui/react-dropdown-menu": "^2.1.16",
+        "@radix-ui/react-hover-card": "^1.1.15",
+        "@radix-ui/react-label": "^2.1.8",
+        "@radix-ui/react-menubar": "^1.1.16",
+        "@radix-ui/react-navigation-menu": "^1.2.14",
+        "@radix-ui/react-popover": "^1.1.15",
+        "@radix-ui/react-progress": "^1.1.8",
+        "@radix-ui/react-radio-group": "^1.3.8",
+        "@radix-ui/react-scroll-area": "^1.2.10",
+        "@radix-ui/react-select": "^2.2.6",
+        "@radix-ui/react-separator": "^1.1.8",
+        "@radix-ui/react-slider": "^1.3.6",
+        "@radix-ui/react-slot": "^1.2.4",
+        "@radix-ui/react-switch": "^1.2.6",
+        "@radix-ui/react-tabs": "^1.1.13",
+        "@radix-ui/react-toast": "^1.2.15",
+        "@radix-ui/react-toggle": "^1.1.10",
+        "@radix-ui/react-toggle-group": "^1.1.11",
+        "@radix-ui/react-tooltip": "^1.2.8",
+        "@supabase/supabase-js": "^2.105.4",
+        "@types/pg": "^8.20.0",
+        "@vercel/analytics": "^2.0.1",
+        "browser-image-compression": "^2.0.2",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "cmdk": "^1.1.1",
+        "embla-carousel-react": "^8.6.0",
+        "exceljs": "^4.4.0",
+        "file-saver": "^2.0.5",
+        "framer-motion": "^12.38.0",
+        "input-otp": "^1.4.2",
+        "lucide-react": "^1.16.0",
+        "next": "^14.2.0",
+        "next-themes": "^0.4.6",
+        "nodemailer": "^8.0.8",
+        "pg": "^8.21.0",
+        "react": "^18.3.0",
+        "react-day-picker": "^10.0.1",
+        "react-dom": "^18.3.0",
+        "react-hook-form": "^7.76.0",
+        "react-resizable-panels": "^4.11.1",
+        "recharts": "^3.8.1",
+        "resend": "^6.12.3",
+        "sonner": "^2.0.7",
+        "tailwind-merge": "^3.6.0",
+        "tailwindcss-animate": "^1.0.7",
+        "vaul": "^1.1.2",
+        "xlsx": "^0.18.5",
+        "zod": "^4.4.3"
+      },
+      "devDependencies": {
+        "@types/file-saver": "^2.0.7",
+        "@types/node": "^20",
+        "@types/nodemailer": "^8.0.0",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "autoprefixer": "^10",
+        "eslint": "^8",
+        "eslint-config-next": "^14",
+        "playwright": "^1.59.1",
+        "postcss": "^8",
+        "tailwindcss": "^3.4",
+        "ts-node": "^10",
+        "typescript": "^5"
+      },
+      "engines": {},
+      "type": null
+    },
+    "frameworks": [
+      "Next.js ^14.2.0 (App Router, Pages Router)",
+      "React ^18.3.0",
+      "Tailwind CSS"
+    ],
+    "libraries": [
+      "Framer Motion",
+      "Supabase",
+      "lucide-react icons",
+      "Radix UI / shadcn",
+      "Zod",
+      "React Hook Form",
+      "TypeScript ^5",
+      "Playwright (E2E)",
+      "ESLint"
+    ],
+    "test_files": [
+      "src/components/ui/aspect-ratio.tsx"
+    ],
+    "has_tests": true,
+    "ci_files": [],
+    "has_ci": false,
+    "docker_files": [],
+    "has_docker": false,
+    "env_files": [],
+    "dir_tree": "./\n  .eslintrc.json\n  .gitignore\n  LICENSE\n  README.md\n  TimetableOptimizer.jsx\n  all_courses_schedule.py\n  exam_schedule.xlsx\n  next.config.js\n  package-lock.json\n  package.json\n  patch_custom_exam.js\n  postcss.config.js\n  scratch.mjs\n  supabase_schema.sql\n  tailwind.config.ts\n  ... +3 more files\n  Screenshots/\n    configuration_page_desktop.png\n    configuration_page_mobile.png\n    custom_exams_desktop.png\n    custom_exams_mobile.png\n    custom_exams_page_desktop.png\n    custom_exams_page_mobile.png\n    custom_timetable_desktop.png\n    custom_timetable_mobile.png\n    custom_timetable_page_desktop.png\n    custom_timetable_page_mobile.png\n    events_page_desktop.png\n    events_page_mobile.png\n    exam_schedule_desktop.png\n    exam_schedule_mobile.png\n    faculty_page_desktop.png\n    ... +21 more files\n  cli-tool/\n    exam_timetable.py\n  docs/\n    campus_map_rules.md\n    end-user-guide.md\n    timetable_analysis.md\n  public/\n    data/\n    logo/\n  scripts/\n    capture-screenshots.js\n    filter_events.py\n    parse-excel.ts\n    parse_summer_timetable.py\n    run_parser.py\n    scrape_slate.py\n    setup-settings-db.ts\n  src/\n    app/\n    components/\n    hooks/\n    lib/\n    pages/\n    styles/\n    types/",
+    "commit_stats": {
+      "commit_count_available": 100,
+      "recent_commits": [
+        {
+          "hash": "b94e824",
+          "date": "2026-06-28",
+          "subject": "fix: remove hardcoded section A rule in summer courses filtering"
+        },
+        {
+          "hash": "cb8200f",
+          "date": "2026-06-25",
+          "subject": "chore: auto-update timetable.json [2026-06-25 16:26 UTC]"
+        },
+        {
+          "hash": "7c677be",
+          "date": "2026-06-25",
+          "subject": "chore: auto-update timetable.json [2026-06-25 13:20 UTC]"
+        },
+        {
+          "hash": "a1b2cd4",
+          "date": "2026-06-24",
+          "subject": "chore: auto-update timetable.json [2026-06-24 08:23 UTC]"
+        },
+        {
+          "hash": "4435d8f",
+          "date": "2026-06-24",
+          "subject": "chore: auto-update timetable.json [2026-06-24 05:05 UTC]"
+        },
+        {
+          "hash": "3a3fd6d",
+          "date": "2026-06-24",
+          "subject": "fix: scrub resch and explicit times inside admin page catalog fetch and python parser"
+        },
+        {
+          "hash": "c008ab1",
+          "date": "2026-06-24",
+          "subject": "chore: auto-update timetable.json [2026-06-24 04:40 UTC]"
+        },
+        {
+          "hash": "e20d538",
+          "date": "2026-06-24",
+          "subject": "feat: handle explicit time slots and rescheduled keyword in timetable parsing"
+        },
+        {
+          "hash": "23d568d",
+          "date": "2026-06-23",
+          "subject": "chore: auto-update timetable.json [2026-06-23 12:34 UTC]"
+        },
+        {
+          "hash": "1568b42",
+          "date": "2026-06-23",
+          "subject": "chore: auto-update timetable.json [2026-06-23 09:43 UTC]"
+        },
+        {
+          "hash": "05d1bea",
+          "date": "2026-06-22",
+          "subject": "chore: auto-update timetable.json [2026-06-22 15:53 UTC]"
+        },
+        {
+          "hash": "1c4bd49",
+          "date": "2026-06-22",
+          "subject": "chore: auto-update student events [2026-06-22 12:15 UTC]"
+        },
+        {
+          "hash": "9a9f3e9",
+          "date": "2026-06-22",
+          "subject": "chore: auto-update timetable.json [2026-06-22 04:41 UTC]"
+        },
+        {
+          "hash": "b4fabad",
+          "date": "2026-06-19",
+          "subject": "chore: auto-update timetable.json [2026-06-19 16:56 UTC]"
+        },
+        {
+          "hash": "40bb6cb",
+          "date": "2026-06-19",
+          "subject": "chore: auto-update timetable.json [2026-06-19 16:44 UTC]"
+        },
+        {
+          "hash": "af1e3c9",
+          "date": "2026-06-19",
+          "subject": "chore: auto-update timetable.json [2026-06-19 16:23 UTC]"
+        },
+        {
+          "hash": "4180627",
+          "date": "2026-06-19",
+          "subject": "chore: auto-update timetable.json [2026-06-19 16:06 UTC]"
+        },
+        {
+          "hash": "e176213",
+          "date": "2026-06-18",
+          "subject": "chore: auto-update timetable.json [2026-06-18 09:15 UTC]"
+        },
+        {
+          "hash": "58e0e15",
+          "date": "2026-06-17",
+          "subject": "fix(ticker): enable weekly wrap-around for recurring classes"
+        },
+        {
+          "hash": "449fe5c",
+          "date": "2026-06-17",
+          "subject": "fix(ticker): resolve date mapping reactively and skip cancelled classes in live tracking"
+        },
+        {
+          "hash": "3f7b467",
+          "date": "2026-06-17",
+          "subject": "feat(timetable): implement special keyword cells (Canceled, Reserved) for timetable parsing and UI styling"
+        },
+        {
+          "hash": "aac2ece",
+          "date": "2026-06-17",
+          "subject": "chore(semester): update semester_calendar.json for Summer 2026"
+        },
+        {
+          "hash": "0f7f0e0",
+          "date": "2026-06-17",
+          "subject": "fix(semester): derive calendar grid months from JSON date range"
+        },
+        {
+          "hash": "888f4f1",
+          "date": "2026-06-17",
+          "subject": "updated the semester calendar for summer 2026"
+        },
+        {
+          "hash": "ce3c9ec",
+          "date": "2026-06-17",
+          "subject": "chore: auto-update timetable.json [2026-06-17 06:14 UTC]"
+        },
+        {
+          "hash": "67311e1",
+          "date": "2026-06-16",
+          "subject": "chore: auto-update timetable.json [2026-06-16 14:46 UTC]"
+        },
+        {
+          "hash": "939f9a0",
+          "date": "2026-06-16",
+          "subject": "feat(timetable): align custom and standard timetable pages with custom date resolution plan"
+        },
+        {
+          "hash": "4d79d1e",
+          "date": "2026-06-16",
+          "subject": "chore: auto-update timetable.json [2026-06-16 13:40 UTC]"
+        },
+        {
+          "hash": "2415a6a",
+          "date": "2026-06-16",
+          "subject": "fix: resolve all matching sheets in python parser, and fix Groq LLM API 403 blocks with User-Agent header"
+        },
+        {
+          "hash": "61a2cc7",
+          "date": "2026-06-16",
+          "subject": "chore: auto-update timetable.json [2026-06-16 13:14 UTC]"
+        }
+      ],
+      "contributors": {
+        "Muhammad Ammar Asad": 63,
+        "github-actions[bot]": 35,
+        "Copilot": 2
+      },
+      "first_commit_date": "2026-05-25",
+      "last_commit_date": "2026-06-28"
+    },
+    "readme_excerpt": "<div align=\"center\">\n\n<img src=\"public/logo/logo.png\" alt=\"FAST Isb Utilities Logo\" width=\"80\" />\n\n# FAST Isb Utilities\n\n**The unified campus companion for FAST NUCES Islamabad**\n\nNo more digging through messy Google Sheets. No more searching emails for exam schedules. No more peeking into rooms to check if they're free. Everything you need — in one place.\n\n[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://fast-nuces.vercel.app/)\n[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)](https://nextjs.org/)\n[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)\n[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-green?style=flat-square&logo=supabase)](https://supabase.com/)\n[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)\n\n</div>\n\n---\n\n## Navigation\n- [The Problem](#the-problem)\n- [What Is FAST Isb Utilities?](#what-is-fast-isb-utilities)\n  - [Who Is It For?](#who-is-it-for)\n- [Screenshots](#screenshots)\n  - [Landing Page](#landing-page)\n- [Features](#features)\n  - [📅 Timetable Viewer](#timetable-viewer)\n  - [📝 Exam Schedule Finder](#exam-schedule-finder)\n  - [🎯 Custom Exams Builder](#custom-exams-builder)\n  - [🗓️ Custom Timetable Builder](#custom-timetable-builder)\n  - [🧠 Timetable Optimizer](#timetable-optimizer)\n  - [🚪 Free Rooms Finder](#free-rooms-finder)\n  - [👨‍🏫 Faculty Directory](#faculty-directory)\n  - [🎪 Campus Events Calendar](#campus-events-calendar)\n  - [📆 Semester Schedule](#semester-schedule)\n  - [📦 Lost & Found](#lost-found)\n  - [🏠 Configuration & Home Page](#configuration-home-page)\n  - [🌗 Dark Mode & Theming](#dark-mode-theming)\n  - [⌨️ Keyboard Shortcuts](#keyboard-shortcuts)\n  - [📤 Export Options](#export-options)\n- [How It Works](#how-it-works)\n  - [User Workflow](#user-workflow)\n  - [Custom Course Workflow](#custom-course-workflow)\n  - [Timetable Optimizer Workflow](#timetable-optimizer-workflow)\n  - [Data Flow](#data-flow)\n- [Tech Stack](#tech-stack)\n- [Project Structure](#project-structure)\n- [Routes](#routes)\n- [Getting Started](#getting-started)\n  - [Prerequisites](#prerequisites)\n  - [Installation](#installation)\n- [Available Scripts](#available-scripts)\n- [Data Pipeline](#data-pipeline)\n  - [Exam Schedule Pipeline](#exam-schedule-pipeline)\n  - [Timetable Pipeline](#timetable-pipeline)\n  - [Campus Events Pipeline](#campus-events-pipeline)\n  - [Faculty & Semester Data](#faculty-semester-data)\n- [Scheduled Automation](#scheduled-automation)\n  - [Vercel Cron Jobs (Production)](#vercel-cron-jobs-production)\n  - [GitHub Actions (Recommended for Data Updates)](#github-actions-data-updates)\n- [Database Schema](#database-schema)\n  - [`lost_found_items`](#lost-found-items)\n  - [`lost_found_claims`](#lost-found-claims)\n  - [`campus_feedback`](#campus-feedback)\n- [Design Highlights](#desi",
+    "observations": [
+      "Has lint script (code quality discipline).",
+      "Has type-check script (TypeScript rigor).",
+      "Has build script.",
+      "Has dev script.",
+      "Has 1 test file(s) — testing discipline present.",
+      "No CI detected.",
+      "No Dockerfile (acceptable for frontend-focused repos).",
+      "No .env.example found.",
+      "Has LICENSE file.",
+      "README length: 19749 chars. Badges: True. Screenshots: True. Install section: True. Architecture section: True."
+    ],
+    "source_to_config_ratio": 5.0,
+    "docs_to_source_ratio": 0.048
+  },
+  {
+    "slug": "02_drama_ghar",
+    "name": "Drama-Ghar",
+    "path": "/home/z/my-project/repos/Drama-Ghar",
+    "total_files": 101,
+    "languages": {
+      "TypeScript (React)": 50,
+      "TypeScript": 31,
+      "JSON": 5,
+      "Other": 5,
+      "Markdown": 2,
+      "JavaScript (ESM)": 2,
+      "JavaScript (CJS)": 2,
+      "Env": 1,
+      "JavaScript": 1,
+      "CSS": 1,
+      "Python": 1
+    },
+    "categories": {
+      "docs": 2,
+      "config": 6,
+      "source": 88,
+      "other": 5
+    },
+    "lines_by_language": {
+      "TypeScript (React)": 5002,
+      "TypeScript": 1528,
+      "JavaScript": 103,
+      "JavaScript (CJS)": 65,
+      "Python": 53,
+      "JavaScript (ESM)": 17,
+      "CSS": 5
+    },
+    "total_source_lines": 6773,
+    "largest_files": [
+      {
+        "path": "app/icon.png",
+        "size": 2437857,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "public/icon.png",
+        "size": 2437857,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "public/login-mobile.jpg",
+        "size": 2376340,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "public/login-bg.jpg",
+        "size": 2223397,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "package-lock.json",
+        "size": 563219,
+        "language": "JSON",
+        "category": "config"
+      },
+      {
+        "path": "README.md",
+        "size": 22429,
+        "language": "Markdown",
+        "category": "docs"
+      },
+      {
+        "path": "components/screens/DramaDetailScreen.tsx",
+        "size": 15716,
+        "language": "TypeScript (React)",
+        "category": "source"
+      },
+      {
+        "path": "components/screens/LoginScreen.tsx",
+        "size": 15507,
+        "language": "TypeScript (React)",
+        "category": "source"
+      },
+      {
+        "path": "components/EpgGrid.tsx",
+        "size": 15157,
+        "language": "TypeScript (React)",
+        "category": "source"
+      },
+      {
+        "path": "components/screens/HomeScreen.tsx",
+        "size": 15123,
+        "language": "TypeScript (React)",
+        "category": "source"
+      }
+    ],
+    "key_files_found": {
+      "README.md": "README.md",
+      "package.json": "package.json",
+      "package-lock.json": "package-lock.json",
+      "tsconfig.json": "tsconfig.json",
+      "next.config.ts": "next.config.ts",
+      "postcss.config.mjs": "postcss.config.mjs",
+      ".env.example": ".env.example"
+    },
+    "key_file_contents": {
+      "README.md": "# DramaGhar \n\n**A full-stack Pakistani drama tracking & streaming platform built with Next.js 15, React 19, MongoDB Atlas, and Supabase.**\n\n---\n## Contributors\n\n- [Ammar Asad](https://github.com/ammarasad2005)\n- [Hanzlah Ch](https://github.com/HanzlahCh)\n\n## Table of Contents\n\n1. [Project Overview](#1-project-overview)\n2. [Tech Stack](#2-tech-stack)\n3. [System Architecture](#3-system-architecture)\n4. [Feature Breakdown & Self-Evaluation](#4-feature-breakdown--self-evaluation)\n   - [Functionality](#41-functionality-2525)\n   - [Password Encryption & Security](#42-password-encryption--security-2020)\n   - [Role-Based Access Control (RBAC)](#43-role-based-access-control-rbac-2525)\n   - [Form Validation](#44-form-validation-1515)\n   - [Navigation & Structure](#45-navigation--structure-1010)\n   - [UI / UX Design](#46-ui--ux-design-1010)\n   - [Authentication & Session Management](#47-authentication--session-management-1515)\n   - [Git Version Control](#48-git-version-control-1010)\n   - [Footer & Layout Components](#49-footer--layout-components-55)\n   - [Content & Creativity](#410-content--creativity-2525)\n   - [Performance & Optimization](#411-performance--optimization-55)\n5. [Database Models](#5-database-models)\n6. [API Routes](#6-api-routes)\n7. [Pages & Screens](#7-pages--screens)\n8. [Technical Setup](#8-technical-setup)\n9. [Self-Evaluation Summary Table](#9-self-evaluation-summary-table)\n\n---\n\n## 1. Project Overview\n\n**DramaGhar** (meaning *Drama Home* in Urdu) is a personalized Pakistani drama tracking and streaming platform. It integrates a live **Electronic Program Guide (EPG)** sourced from a Supabase database, allowing users to:\n\n- Browse a catalog of **200+ Pakistani dramas** across all major channels (ARY Digital, HUM TV, Geo Entertainment, Green Entertainment, Express Entertainment, and more).\n- **Stream episodes** directly in-app via embedded YouTube players.\n- **Track watch history** with per-episode progress and analytics (today / weekly / lifetime watch time in hours).\n- **Save dramas** to a personal watchlist and receive reminders.\n- View a **live TV schedule** (EPG grid) with auto-scroll to the current time.\n- Manage their account via a full **settings page**.\n- (Admins) Manage all user accounts from a dedicated **Admin Dashboard**.\n\n---\n\n## 2. Tech Stack\n\n| Category | Technology |\n|---|---|\n| **Framework** | Next.js 15 (App Router + API Routes) |\n| **UI Library** | React 19 |\n| **Language** | TypeScript 5.9 |\n| **Styling** | Tailwind CSS 4.1, tw-animate-css |\n| **Icons** | Lucide React |\n| **Animations** | Framer Motion (motion 12) |\n| **Fonts** | Inter (sans), Playfair Display (serif) via `next/font` |\n| **Primary Database** | MongoDB Atlas via Mongoose 9 |\n| **Drama/Media Data** | Supabase (PostgreSQL + object storage) |\n| **Authentication** | Custom JWT (`jose` 6) — HTTP-only cookies |\n| **Password Hashing** | bcryptjs (salt rounds: 10) |\n| **Email** | Nodemailer 8 (Gmail SMTP) |\n| **Form Handling** | react-hook-form 7, Zod 4 |\n| **Video Streaming** | react-youtube 10 (YouTube iframe embed) |\n| **Date Utilities** | date-fns 4, date-fns-tz 3 |\n| **AI Integration** | Google Generative AI (`@google/genai`) |\n| **UI Primitives** | Radix UI (Dialog, Separator, Tabs, Slot) |\n| **Linting** | ESLint 9, eslint-config-next |\n\n---\n\n## 3. System Architecture\n\n```\nDramaGhar/\n├── app/                        # Next.js App Router\n│   ├── layout.tsx              # Root HTML layout, fonts, metadata\n│   ├── page.tsx                # SPA entry point — all screens rendered here\n│   ├── globals.css             # Global styles & Tailwind directives\n│   └── api/                   # Backend API Routes\n│       ├── auth/               #   login, register, logout, me, forgot/reset-password\n│       ├── admin/              #   user management (admin-only)\n│       ├── drama/              #   drama detail by slug\n│       ├── dramas/             #   drama catalog (list, search)\n│       ├── history/            #   watch history CRUD\n│       ├── reminders/          #   reminders CRUD\n│       ├── schedule/           #   EPG schedule data\n│       └── watchlist/          #   watchlist CRUD\n│\n├── components/\n│   ├── Sidebar.tsx             # Role-aware navigation sidebar\n│   ├── Header.tsx              # Top bar with user avatar & search\n│   ├── EpgGrid.tsx             # Auto-scrolling EPG grid component\n│   ├── drama/                  # DramaDetail sub-components (episodes, player)\n│   ├── epg/                    # EPG sub-components\n│   ├── screens/                # Full-page screen components (one per route/feature)\n│   └── ui/                     # Reusable UI primitives (Badge, Button, Skeleton, etc.)\n│\n├── lib/\n│   ├── auth.ts                 # JWT sign/verify helpers\n│   ├── mongodb.ts              # MongoDB connection singleton\n│   ├── drama-types.ts          # TypeScript interfaces for drama data\n│   ├── epg-types.ts            # TypeScript interfaces for EPG/schedule data\n│   ├── date-utils.ts           # Timezone-aware date helpers (Asia/Karachi)\n│   └── utils.ts                # Shared utilities (cn, classnames)\n│\n├── models/                     # Mongoose schemas\n│   ├── User.ts                 # User model (email, passwordHash, role, status, reset tokens)\n│   ├── History.ts              # Watch history model\n│   ├── Watchlist.ts            # Watchlist model\n│   └── Reminder.ts             # Reminders model\n│\n├── middleware.ts               # Next.js Edge Middleware — JWT verification & route protection\n├── .env.example                # Environment variable template\n└── package.json\n```\n\n**Data flow:**\n1. The browser loads the single Next.js page (`app/page.tsx`).\n2. The client checks `/api/auth/me` on mount to restore the session.\n3. All navigation is handled in React state — no full page reloads (true SPA).\n4. Protected screens call authenticated API routes; the Edge Middleware validates the JWT cookie before the request reaches any API handler.\n5. Drama catalog data is fetched from **Supabase** (PostgreSQL); user data (history, watchlist, reminders, accounts) is stored in **MongoDB Atlas**.\n\n---\n\n## 4. Feature Breakdown & Self-Evaluation\n\n### 4.1 Functionality (25/25)\n\n#### Core Features — All Interactive Elements Work (10/10)\n- **SPA architecture** (`app/page.tsx`) renders 15+ distinct screens in a single React tree with zero full page reloads.\n- **EPG Grid** (`EpgGrid.tsx`) fetches schedule data, auto-scrolls to the current time on load, and highlights the currently-airing programme.\n- **Drama Library** (`ExploreScreen.tsx`): searchable, filterable grid of 200+ dramas pulled live from Supabase.\n- **Drama Detail Page** (`DramaDetailScreen.tsx`): poster, synopsis, episode list, watchlist/reminder buttons, and inline YouTube episode streaming.\n- **Channels Screen** (`ChannelsScreen.tsx`): lists all supported channels and links to their schedule.\n- **Continue Watching** (`ContinueWatchingScreen.tsx`): resume in-progress episodes.\n- **Reminders** (`RemindersScreen.tsx`): set and manage airing reminders.\n- **History** (`HistoryScreen.tsx`): full watch log with today / weekly / lifetime analytics.\n- **Settings** (`SettingsScreen.tsx`): update display name and password.\n- **About** (`AboutScreen.tsx`): project information and credits.\n\n#### Login & Signup System (10/10)\n- **Registration** (`/api/auth/register`): validates input with Zod, hashes password with bcrypt, stores user in MongoDB.\n- **Login** (`/api/auth/login`): verifies credentials, issues a signed JWT stored as an HTTP-only cookie.\n- **Logout** (`/api/auth/logout`): clears the session cookie server-side.\n- **Session restore** (`/api/auth/me`): validates the cookie on every page load to restore the logged-in state.\n- **Forgot / Reset Password** (`/api/auth/forgot-password`, `/api/auth/reset-password`): generates a 32-byte cryptographically random token, emails a time-limited link via Nodemailer, and invalidates the token after use.\n\n#### Data Processing — Full CRUD via MongoDB (5/5)\n- **History**: `GET /api/history` (list), `POST /api/history` (record episode), `DELETE /api/history` (clear).\n- **Watchlist**: `GET /api/watchlist`, `POST /api/watchlist`, `DELETE /api/watchlist`.\n- **Reminders**: `GET /api/reminders`, `POST /api/reminders`, `DELETE /api/reminders`.\n- **Admin user management**: `GET /api/admin/users`, `PATCH /api/admin/users` (change role / toggle status).\n\n---\n\n### 4.2 Password Encryption & Security (20/20)\n\n| Criterion | Implementation |\n|---|---|\n| **Secure hashing (8)** | `bcryptjs.hash(password, 10)` called in `POST /api/auth/register` before any DB write. The `passwordHash` field is marked `select: false` in the Mongoose schema, so it is never returned in queries by default. |\n| **No plain-text storage/logging (5)** | Plain-text passwords are never stored, never returned from any API, and never `console.log`-ged anywhere in the codebase. |\n| **Hash comparison (4)** | Login uses `bcrypt.compare(candidatePassword, user.passwordHash)` via the `UserSchema.methods.comparePassword` instance method — never string equality. |\n| **Secure password reset (3)** | `crypto.randomBytes(32).toString('hex')` generates the reset token. The token is hashed before DB storage, has a 60-minute expiry (`resetExpiry`), and is deleted from the DB after successful use. |\n\n---\n\n### 4.3 Role-Based Access Control (RBAC) (25/25)\n\n| Criterion | Implementation |\n|---|---|\n| **Two distinct roles (5)** | `role: { type: String, enum: ['user', 'admin'], default: 'user' }` defined in `models/User.ts`. |\n| **Admin dashboard protection (8)** | `middleware.ts` (Edge Middleware): if `path.startsWith('/admin')` and `session.role !== 'admin'`, redirects to `/`. The `AdminScreen` component also renders an \"Access Denied\" message if the client-side role check fails. |\n| **Admin user management (7)** | `GET /api/admin/users` lists all users. `PATCH /api/admin/users` allows admins to change any user's `role` (`user` ↔ `admin`) and toggle `status` (`active` ↔ `inactive`). Inactive users are rejected at the login API. |\n| **Dynamic frontend nav (5)** | `Sidebar.tsx` pushes `{ id: 'admin', label: 'Admin Dashboard', icon: UserCog }` into `secondaryNav` only when `user?.role === 'admin'`. Regular users never see the admin menu item. |\n| **Backend middleware (5)** | `middleware.ts` runs at the Edge before every non-static request. It verifies the JWT and enforces: unauthenticated → redirect to `/login`; non-admin on `/admin/*` → redirect to `/`; logged-in user on `/login` or `/signup` → redirect to `/`. |\n\n---\n\n### 4.4 Form Validation (15/15)\n\n| Criterion | Implementation |\n|---|---|\n| **Client-side validation (5)** | `react-hook-form` + `@hookform/resolvers/zod` used in `LoginScreen`, `SignupScreen`, `ForgotPasswordScreen`, `ResetPasswordScreen`, and `SettingsScreen`. Zod schemas enforce required fields, minimum password length (8 chars), valid email format, and password confirmation match. |\n| **Server-side validation (5)** | All `POST` API routes (`/api/auth/register`, `/api/auth/login`, `/api/auth/reset-password`, etc.) independently parse and validate the request body with Zod before touching the database. |\n| **Inline error messages (5)** | `react-hook-form`'s `formState.errors` object drives inline error `<p>` elements rendered directly below each invalid field — displayed on submit attempt and cleared as the user corrects input. |\n\n---\n\n### 4.5 Navigation & Structure (10/10)\n\n| Criterion | Implementation |\n|---|---|\n| **Working navbar, no broken routes (5)** | Persistent `Sidebar` (desktop) and hamburger-triggered slide-in drawer (mobile) on every screen. All 15 navigation targets are mapped in `renderScreen()` in `app/page.tsx`. |\n| **Logical page hierarchy & smooth flow (3)** | Clear hierarchy: Login → Home (dashboard) → Explore / Schedule / Watchlist / History / Reminders / Settings / Admin. `onNavigate(screen, params?)` handles all transitions. |\n| **Sticky/responsive navbar & breadcrumbs (2)** | Sidebar is `position: fixed` (always visible on desktop). `Header.tsx` provides a sticky top bar with a hamburger menu on mobile. Active route is highlighted with an emerald pill indicator. |\n\n---\n\n### 4.6 UI / UX Design (10/10)\n\n| Criterion | Implementation |\n|---|---|\n| **Clean, consistent layout (5)** | Unified design system: deep emerald (`#082F22`) sidebar, gold accent (`#CBA358`), Inter for UI text, Playfair Display for headings. Tailwind utility classes applied consistently across all 15 screens. Dark mode via `dark:` variants on every element. |\n| **Responsive design (5)** | Fluid grid layouts (`grid-cols-1 lg:grid-cols-3`), `flex-col sm:flex-row` stacking, `lg:ml-64` main content offset, and a mobile slide-in sidebar ensure correct rendering on mobile, tablet, and desktop. |\n\nAdditional UX highlights:\n- **Framer Motion** (`motion` package) powers page-entry animations (`animate-in fade-in`).\n- **Skeleton loaders** shown during async data fetching (drama details, history, schedule).\n- **LIVE badge** pulsing animation on currently-airing programmes in the EPG grid.\n- Horizontal scrollable schedule strips with custom CSS scrollbar hiding.\n- Urdu calligraphy SVG decoration in the sidebar footer.\n\n---\n\n### 4.7 Authentication & Session Management (15/15)\n\n| Criterion | Implementation |\n|---|---|\n| **Functional login/logout with cookies (10)** | `jose` library signs a HS256 JWT on login. The token is set as an HTTP-only, `SameSite=Lax` cookie (not accessible from JavaScript). Logout clears the cookie via `Set-Cookie: session=; Max-Age=0`. |\n| **Session expiry & re-login (5)** | JWT `exp` claim set to 7 days at issue time (`lib/auth.ts`). The Edge Middleware calls `jwtVerify()` on every request; an expired or tampered token is treated as unauthenticated, forcing a re-login. |\n\n---\n\n### 4.8 Git Version Control (10/10)\n\n| Criterion | Implementation |\n|---|---|\n| **Repository on GitHub (3)** | Hosted at `github.com/ammarasad2005/Drama-Ghar` with a clean project structure. |\n| **10+ meaningful commits (4)** | Commits reflect incremental feature development: initial scaffold, auth system, EPG integration, RBAC, watchlist, history analytics, streaming, settings, admin dashboard, responsive UI. |\n| **Conventional commit messages (3)** | Commit messages follow the `feat:`, `fix:`, `docs:`, `style:`, `refactor:` convention. |\n\n---\n\n### 4.9 Footer & Layout Components (5/5)\n\nA persistent footer is rendered at the bottom of the main layout on every authenticated screen:\n\n- Copyright notice with current year.\n- Quick-links to About, Privacy, and Contact.\n- Branded social media icons.\n\n---\n\n### 4.10 Content & Creativity (25/25)\n\n| Criterion | Implementation |\n|---|---|\n| **Original, relevant content (5)** | All content is original — drama metadata, episode schedules, and imagery. No placeholder Lorem Ipsum. |\n| **Effective use of media (5)** | Drama poster images, YouTube episode embeds via `react-youtube`, channel logos, and Lucide icon set used throughout. |\n| **Innovative concept (5)** | DramaGhar goes well beyond a generic CRUD app: it combines a live EPG grid, YouTube streaming, quantitative watch analytics, AI integration (`@google/genai`), and a 200+ drama catalog in a single cohesive platform. |\n| **Visual design quality (5)** | Carefully chosen emerald/gold palette evoking classic Pakistani drama aesthetics. Serif typography (Playfair Display) for headings contrasted with clean Inter for body text. Generous whitespace and consistent 8-point spacing grid. |\n| **Animations & micro-interactions (5)** | Framer Motion enter animations; hover scale on drama posters; LIVE badge pulse; progress bar fill transition; sidebar slide-in drawer; skeleton shimmer during loading. |\n| **Overall creative impression (5)** | Urdu text (\"کہانیوں سے رشتے بنتے ہیں\" — *Connections are built through stories*) displayed in the sidebar footer. Gold SVG stage-curtain decoration. Cohesive dark-mode experience. The product genuinely feels like a polished streaming app. |\n\n---\n\n### 4.11 Performance & Optimization (5/5)\n\n- **Next.js Image Optimization**: `next/image` used for all drama posters and thumbnails — automatic WebP conversion, lazy loading, and proper `sizes` attributes.\n- **Edge Middleware**: JWT verification runs at the CDN edge, not in a Node.js lambda, minimising auth overhead.\n- **MongoDB connection pooling**: `lib/mongodb.ts` caches the Mongoose connection across hot reloads and serverless invocations.\n- **Code splitting**: Next.js automatically splits bundles per route. The SPA approach keeps the main chunk small.\n- **Lazy data fetching**: Each screen fetches its own data on mount (not on navigation), so unvisited screens never load unnecessary data.\n- **CSS scroll optimisation**: Custom `scrollbar-hide` class and hardware-accelerated `overflow-x: auto` for the EPG grid.\n\n---\n\n## 5. Database Models\n\n### User (`models/User.ts`)\n| Field | Type | Notes |\n|---|---|---|\n| `email` | String | Unique, lowercase, trimmed |\n| `passwordHash` | String | bcrypt hash; `select: false` |\n| `name` | String | Optional display name |\n| `role` | `'user' \\| 'admin'` | Default: `'user'` |\n| `status` | `'active' \\| 'inactive'` | Default: `'active'` |\n| `resetToken` | String | Hashed reset token |\n| `resetExpiry` | Date | 60-minute expiry |\n| `createdAt / updatedAt` | Date | Auto timestamps |\n\n### History (`models/History.ts`)\nStores per-episode watch records linked to a user: `slug`, `title`, `episode`, `progress`, `image`, `watchDurationMinutes`, `lastWatched`.\n\n### Watchlist (`models/Watchlist.ts`)\nStores drama slugs saved by a user with `addedAt` timestamp.\n\n### Reminder (`models/Reminder.ts`)\nStores drama/episode reminders with scheduled airing time and channel.\n\n---\n\n## 6. API Routes\n\n| Method | Route | Auth | Description |\n|---|---|---|---|\n| POST | `/api/auth/register` | Public | Register new user |\n| POST | `/api/auth/login` | Public | Login, issue JWT cookie |\n| POST | `/api/auth/logout` | Public | Clear session cookie |\n| GET | `/api/auth/me` | Cookie | Return current user from JWT |\n| POST | `/api/auth/forgot-password` | Public | Send password reset email |\n| POST | `/api/auth/reset-password` | Public | Validate token & update password |\n| GET | `/api/dramas` | Cookie | List/search drama catalog |\n| GET | `/api/drama/[slug]` | Cookie | Get single drama with episodes |\n| GET | `/api/schedule` | Cookie | Fetch EPG schedule by date |\n| GET/POST/DELETE | `/api/history` | Cookie | Watch history CRUD |\n| GET/POST/DELETE | `/api/watchlist` | Cookie | Watchlist CRUD |\n| GET/POST/DELETE | `/api/reminders` | Cookie | Reminders CRUD |\n| GET/PATCH | `/api/admin/users` | Admin | List users, update role/status |\n\n---\n\n## 7. Pages & Screens\n\n| Screen | Component | Access |\n|---|---|---|\n| Login | `LoginScreen.tsx` | Public |\n| Forgot Password | `ForgotPasswordScreen.tsx` | Public |\n| Reset Password | `ResetPasswordScreen.tsx` | Token-gated |\n| Home (Dashboard) | `HomeScreen.tsx` | Auth |\n| Schedule / EPG | `ScheduleScreen.tsx` | Auth |\n| Explore Library | `ExploreScreen.tsx` | Auth |\n| Drama Detail + Stream | `DramaDetailScreen.tsx` | Auth |\n| Channels | `ChannelsScreen.tsx` | Auth |\n| Continue Watching | `ContinueWatchingScreen.tsx` | Auth |\n| My Watchlist | `WatchlistScreen.tsx` | Auth |\n| Reminders | `RemindersScreen.tsx` | Auth |\n| History & Analytics | `HistoryScreen.tsx` | Auth |\n| Settings | `SettingsScreen.tsx` | Auth |\n| Admin Dashboard | `AdminScreen.tsx` | Admin only |\n| About | `AboutScreen.tsx` | Auth |\n\n---\n\n## 8. Technical Setup\n\n### Prerequisites\n- Node.js 18+\n- MongoDB Atlas cluster (free tier works)\n- Gmail account with App Password enabled (for password reset emails)\n\n### Environment Variables\n\n... [truncated for brevity] ...",
+      "package.json": "{\n  \"name\": \"ai-studio-applet\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"eslint .\",\n    \"clean\": \"next clean\"\n  },\n  \"dependencies\": {\n    \"@google/genai\": \"^1.17.0\",\n    \"@hookform/resolvers\": \"^5.2.2\",\n    \"@radix-ui/react-dialog\": \"^1.1.15\",\n    \"@radix-ui/react-separator\": \"^1.1.8\",\n    \"@radix-ui/react-slot\": \"^1.2.4\",\n    \"@radix-ui/react-tabs\": \"^1.1.13\",\n    \"autoprefixer\": \"^10.4.21\",\n    \"bcryptjs\": \"^3.0.3\",\n    \"class-variance-authority\": \"^0.7.1\",\n    \"clsx\": \"^2.1.1\",\n    \"date-fns\": \"^4.1.0\",\n    \"date-fns-tz\": \"^3.2.0\",\n    \"jose\": \"^6.2.3\",\n    \"lucide-react\": \"^0.553.0\",\n    \"mongoose\": \"^9.6.2\",\n    \"motion\": \"^12.23.24\",\n    \"next\": \"^15.4.9\",\n    \"nodemailer\": \"^8.0.7\",\n    \"postcss\": \"^8.5.6\",\n    \"react\": \"^19.2.1\",\n    \"react-dom\": \"^19.2.1\",\n    \"react-hook-form\": \"^7.75.0\",\n    \"react-youtube\": \"^10.1.0\",\n    \"tailwind-merge\": \"^3.3.1\",\n    \"zod\": \"^4.4.3\"\n  },\n  \"devDependencies\": {\n    \"@tailwindcss/postcss\": \"4.1.11\",\n    \"@tailwindcss/typography\": \"^0.5.19\",\n    \"@types/bcryptjs\": \"^2.4.6\",\n    \"@types/node\": \"^20\",\n    \"@types/nodemailer\": \"^8.0.0\",\n    \"@types/react\": \"^19\",\n    \"@types/react-dom\": \"^19\",\n    \"eslint\": \"9.39.1\",\n    \"eslint-config-next\": \"16.0.8\",\n    \"firebase-tools\": \"^15.0.0\",\n    \"tailwindcss\": \"4.1.11\",\n    \"tw-animate-css\": \"^1.4.0\",\n    \"typescript\": \"5.9.3\"\n  }\n}\n",
+      "package-lock.json": "[lock file present]",
+      "tsconfig.json": "{\n  \"compilerOptions\": {\n    \"target\": \"ES2017\",\n    \"lib\": [\"dom\", \"dom.iterable\", \"esnext\"],\n    \"allowJs\": true,\n    \"skipLibCheck\": true,\n    \"strict\": true,\n    \"noEmit\": true,\n    \"esModuleInterop\": true,\n    \"module\": \"esnext\",\n    \"moduleResolution\": \"bundler\",\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true,\n    \"jsx\": \"preserve\",\n    \"incremental\": true,\n    \"plugins\": [\n      {\n        \"name\": \"next\"\n      }\n    ],\n    \"baseUrl\": \".\",\n    \"paths\": {\n      \"@/*\": [\"./*\"]\n    }\n  },\n  \"include\": [\"next-env.d.ts\", \"**/*.ts\", \"**/*.tsx\", \".next/types/**/*.ts\"],\n  \"exclude\": [\"node_modules\", \"drama-ghar-streaming-included\", \"temp-\"]\n}\n",
+      "next.config.ts": "import type {NextConfig} from 'next';\n\nconst nextConfig: NextConfig = {\n  reactStrictMode: true,\n  eslint: {\n    ignoreDuringBuilds: true,\n  },\n  typescript: {\n    ignoreBuildErrors: false,\n  },\n  // Allow access to remote image placeholder.\n  images: {\n    remotePatterns: [\n      {\n        protocol: 'https',\n        hostname: 'picsum.photos',\n        port: '',\n        pathname: '/**', // This allows any path under the hostname\n      },\n      {\n        protocol: 'https',\n        hostname: 'grrffdnkupjmsgfdnzfd.supabase.co',\n        port: '',\n        pathname: '/**', \n      },\n      {\n        protocol: 'https',\n        hostname: 'img.youtube.com',\n        port: '',\n        pathname: '/**', \n      },\n      {\n        protocol: 'https',\n        hostname: 'i.ytimg.com',\n        port: '',\n        pathname: '/**', \n      },\n    ],\n  },\n  output: 'standalone',\n  transpilePackages: ['motion'],\n  webpack: (config, {dev}) => {\n    // HMR is disabled in AI Studio via DISABLE_HMR env var.\n    // Do not modifyâfile watching is disabled to prevent flickering during agent edits.\n    if (dev && process.env.DISABLE_HMR === 'true') {\n      config.watchOptions = {\n        ignored: /.*/,\n      };\n    }\n    return config;\n  },\n};\n\nexport default nextConfig;\n",
+      "postcss.config.mjs": "/** @type {import('postcss-load-config').Config} */\nconst config = {\n  plugins: {\n    '@tailwindcss/postcss': {},\n    autoprefixer: {},\n  },\n};\n\nexport default config;\n",
+      ".env.example": "# GEMINI_API_KEY: Required for Gemini AI API calls.\n# AI Studio automatically injects this at runtime from user secrets.\n# Users configure this via the Secrets panel in the AI Studio UI.\nGEMINI_API_KEY=\"MY_GEMINI_API_KEY\"\n\n# APP_URL: The URL where this applet is hosted.\n# AI Studio automatically injects this at runtime with the Cloud Run service URL.\n# Used for self-referential links, OAuth callbacks, and API endpoints.\nAPP_URL=\"MY_APP_URL\"\n\n# MongoDB Database URI\nMONGODB_URI=\"mongodb+srv://<username>:<password>@<cluster-url>/<dbname>?retryWrites=true&w=majority\"\n\n# JWT Secret for custom authentication\nJWT_SECRET=\"your_super_secret_jwt_key_here\"\n\n# Email Configuration for Password Reset\nEMAIL_USER=\"your-email@example.com\"\nEMAIL_PASS=\"your-email-password-or-app-password\"\n"
+    },
+    "package_json": {
+      "name": "ai-studio-applet",
+      "version": "0.1.0",
+      "private": true,
+      "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint .",
+        "clean": "next clean"
+      },
+      "dependencies": {
+        "@google/genai": "^1.17.0",
+        "@hookform/resolvers": "^5.2.2",
+        "@radix-ui/react-dialog": "^1.1.15",
+        "@radix-ui/react-separator": "^1.1.8",
+        "@radix-ui/react-slot": "^1.2.4",
+        "@radix-ui/react-tabs": "^1.1.13",
+        "autoprefixer": "^10.4.21",
+        "bcryptjs": "^3.0.3",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "date-fns": "^4.1.0",
+        "date-fns-tz": "^3.2.0",
+        "jose": "^6.2.3",
+        "lucide-react": "^0.553.0",
+        "mongoose": "^9.6.2",
+        "motion": "^12.23.24",
+        "next": "^15.4.9",
+        "nodemailer": "^8.0.7",
+        "postcss": "^8.5.6",
+        "react": "^19.2.1",
+        "react-dom": "^19.2.1",
+        "react-hook-form": "^7.75.0",
+        "react-youtube": "^10.1.0",
+        "tailwind-merge": "^3.3.1",
+        "zod": "^4.4.3"
+      },
+      "devDependencies": {
+        "@tailwindcss/postcss": "4.1.11",
+        "@tailwindcss/typography": "^0.5.19",
+        "@types/bcryptjs": "^2.4.6",
+        "@types/node": "^20",
+        "@types/nodemailer": "^8.0.0",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "eslint": "9.39.1",
+        "eslint-config-next": "16.0.8",
+        "firebase-tools": "^15.0.0",
+        "tailwindcss": "4.1.11",
+        "tw-animate-css": "^1.4.0",
+        "typescript": "5.9.3"
+      },
+      "engines": {},
+      "type": null
+    },
+    "frameworks": [
+      "Next.js ^15.4.9 (App Router)",
+      "React ^19.2.1",
+      "Tailwind CSS"
+    ],
+    "libraries": [
+      "Mongoose",
+      "lucide-react icons",
+      "Radix UI / shadcn",
+      "Zod",
+      "React Hook Form",
+      "TypeScript 5.9.3",
+      "ESLint"
+    ],
+    "test_files": [],
+    "has_tests": false,
+    "ci_files": [],
+    "has_ci": false,
+    "docker_files": [],
+    "has_docker": false,
+    "env_files": [
+      ".env.example"
+    ],
+    "dir_tree": "./\n  .env.example\n  .eslintrc.json\n  .gitignore\n  README.md\n  WebProgramming_ProjectRubrics.md\n  eslint.config.mjs\n  generate-pages.js\n  metadata.json\n  middleware.ts\n  next-env.d.ts\n  next.config.ts\n  package-lock.json\n  package.json\n  postcss.config.mjs\n  replace-colors-2.cjs\n  ... +2 more files\n  app/\n    globals.css\n    icon.png\n    layout.tsx\n    page.tsx\n    (app)/\n    api/\n    login/\n  components/\n    EpgGrid.tsx\n    Header.tsx\n    Sidebar.tsx\n    drama/\n    epg/\n    screens/\n    ui/\n  context/\n    UserContext.tsx\n  drama-ghar-streaming-included/\n  hooks/\n    use-mobile.ts\n  lib/\n    auth.ts\n    date-utils.ts\n    drama-types.ts\n    epg-types.ts\n    mongodb.ts\n    utils.ts\n  models/\n    DramaView.ts\n    History.ts\n    Reminder.ts\n    User.ts\n    Watchlist.ts\n  public/\n    icon.png\n    login-bg.jpg\n    login-mobile.jpg\n  scripts/\n    pakdrama-scraper.py",
+    "commit_stats": {
+      "commit_count_available": 32,
+      "recent_commits": [
+        {
+          "hash": "7a5e837",
+          "date": "2026-05-21",
+          "subject": "Final Commit"
+        },
+        {
+          "hash": "bf422f9",
+          "date": "2026-05-10",
+          "subject": "feat: clean up credits and implement data management controls"
+        },
+        {
+          "hash": "2e171b2",
+          "date": "2026-05-10",
+          "subject": "fix: resolve typescript prop interfaces in route wrappers for vercel build"
+        },
+        {
+          "hash": "f6f84f3",
+          "date": "2026-05-10",
+          "subject": "fix: remove unused params spread causing next.js warning"
+        },
+        {
+          "hash": "8f27077",
+          "date": "2026-05-10",
+          "subject": "refactor: transition to Next.js App Router URLs and add admin delete functionality"
+        },
+        {
+          "hash": "c8aeb2c",
+          "date": "2026-05-10",
+          "subject": "feat: add interactive guest name prompt and isolate admin logic"
+        },
+        {
+          "hash": "fb3227c",
+          "date": "2026-05-10",
+          "subject": "feat: implement guest session, explicit remember me, and social footer for rubric completion"
+        },
+        {
+          "hash": "36cb81c",
+          "date": "2026-05-10",
+          "subject": "fix: enable scrolling for explore library page"
+        },
+        {
+          "hash": "92368e0",
+          "date": "2026-05-10",
+          "subject": "feat: apply channel filter correctly when navigating"
+        },
+        {
+          "hash": "d3d6a13",
+          "date": "2026-05-10",
+          "subject": "refactor: improve aesthetics and navigation for channels/explore"
+        },
+        {
+          "hash": "f4b261b",
+          "date": "2026-05-11",
+          "subject": "feat: implement data-driven recommendations, fix stale picsum images in history, and format local views"
+        },
+        {
+          "hash": "3b2b3d0",
+          "date": "2026-05-10",
+          "subject": "fix: remove is_active filter to resolve missing dramas like Pehli Barish"
+        },
+        {
+          "hash": "66dba7d",
+          "date": "2026-05-10",
+          "subject": "Merge pull request #1 from ammarasad2005/copilot/update-readme-with-project-report"
+        },
+        {
+          "hash": "8dae09a",
+          "date": "2026-05-14",
+          "subject": "docs: rewrite README as comprehensive project report aligned with rubric"
+        },
+        {
+          "hash": "aebbba2",
+          "date": "2026-05-10",
+          "subject": "fix: add youtube image domains to next.config.ts remotePatterns"
+        },
+        {
+          "hash": "c48d0ff",
+          "date": "2026-05-10",
+          "subject": "fix: resolve drama not found error, fix streaming playback, and enable scrolling on detail page"
+        },
+        {
+          "hash": "9c68221",
+          "date": "2026-05-10",
+          "subject": "fix: resolve build errors and complete drama streaming integration"
+        },
+        {
+          "hash": "5fcf9b3",
+          "date": "2026-05-10",
+          "subject": "feat: integrate drama library, streaming, and quantitative watch tracking"
+        },
+        {
+          "hash": "500f97c",
+          "date": "2026-05-11",
+          "subject": "style: make mobile auth cards more compact and enhance glassmorphism effect"
+        },
+        {
+          "hash": "44b1cd2",
+          "date": "2026-05-11",
+          "subject": "style: apply glassmorphism to login/auth cards on mobile"
+        },
+        {
+          "hash": "03836a7",
+          "date": "2026-05-10",
+          "subject": "style: finalize and set official website icon with tight cropping"
+        },
+        {
+          "hash": "c87fb92",
+          "date": "2026-05-10",
+          "subject": "fix: strictly filter live on tv now to only show currently airing dramas"
+        },
+        {
+          "hash": "79c9935",
+          "date": "2026-05-10",
+          "subject": "style: replace initial auth spinner with login skeleton for faster perceived loading"
+        },
+        {
+          "hash": "b9fb2a8",
+          "date": "2026-05-10",
+          "subject": "fix: resolve build-time environment variable errors by adopting lazy db connection and force-dynamic routes"
+        },
+        {
+          "hash": "3c199a5",
+          "date": "2026-05-10",
+          "subject": "feat: enhance login screen pre-load with detailed skeleton content"
+        },
+        {
+          "hash": "aa4fc20",
+          "date": "2026-05-10",
+          "subject": "feat: implement personalized UX, dynamic interactivity, and complete site hierarchy"
+        },
+        {
+          "hash": "1b9577a",
+          "date": "2026-05-10",
+          "subject": "feat: complete project architecture including RBAC, Watchlist, and Form Validation"
+        },
+        {
+          "hash": "f122a91",
+          "date": "2026-05-10",
+          "subject": "fix: resolve new/repeat tag conflict and enhance EPG component"
+        },
+        {
+          "hash": "a110254",
+          "date": "2026-05-10",
+          "subject": "fix: resolve new/repeat tag conflict and enhance EPG component"
+        },
+        {
+          "hash": "18cffa3",
+          "date": "2026-05-10",
+          "subject": "feat: Implement schedule screen and data fetching"
+        }
+      ],
+      "contributors": {
+        "Hanzlah Mehmood Ch": 1,
+        "Muhammad Ammar Asad": 30,
+        "copilot-swe-agent[bot]": 1
+      },
+      "first_commit_date": "2026-05-09",
+      "last_commit_date": "2026-05-21"
+    },
+    "readme_excerpt": "# DramaGhar \n\n**A full-stack Pakistani drama tracking & streaming platform built with Next.js 15, React 19, MongoDB Atlas, and Supabase.**\n\n---\n## Contributors\n\n- [Ammar Asad](https://github.com/ammarasad2005)\n- [Hanzlah Ch](https://github.com/HanzlahCh)\n\n## Table of Contents\n\n1. [Project Overview](#1-project-overview)\n2. [Tech Stack](#2-tech-stack)\n3. [System Architecture](#3-system-architecture)\n4. [Feature Breakdown & Self-Evaluation](#4-feature-breakdown--self-evaluation)\n   - [Functionality](#41-functionality-2525)\n   - [Password Encryption & Security](#42-password-encryption--security-2020)\n   - [Role-Based Access Control (RBAC)](#43-role-based-access-control-rbac-2525)\n   - [Form Validation](#44-form-validation-1515)\n   - [Navigation & Structure](#45-navigation--structure-1010)\n   - [UI / UX Design](#46-ui--ux-design-1010)\n   - [Authentication & Session Management](#47-authentication--session-management-1515)\n   - [Git Version Control](#48-git-version-control-1010)\n   - [Footer & Layout Components](#49-footer--layout-components-55)\n   - [Content & Creativity](#410-content--creativity-2525)\n   - [Performance & Optimization](#411-performance--optimization-55)\n5. [Database Models](#5-database-models)\n6. [API Routes](#6-api-routes)\n7. [Pages & Screens](#7-pages--screens)\n8. [Technical Setup](#8-technical-setup)\n9. [Self-Evaluation Summary Table](#9-self-evaluation-summary-table)\n\n---\n\n## 1. Project Overview\n\n**DramaGhar** (meaning *Drama Home* in Urdu) is a personalized Pakistani drama tracking and streaming platform. It integrates a live **Electronic Program Guide (EPG)** sourced from a Supabase database, allowing users to:\n\n- Browse a catalog of **200+ Pakistani dramas** across all major channels (ARY Digital, HUM TV, Geo Entertainment, Green Entertainment, Express Entertainment, and more).\n- **Stream episodes** directly in-app via embedded YouTube players.\n- **Track watch history** with per-episode progress and analytics (today / weekly / lifetime watch time in hours).\n- **Save dramas** to a personal watchlist and receive reminders.\n- View a **live TV schedule** (EPG grid) with auto-scroll to the current time.\n- Manage their account via a full **settings page**.\n- (Admins) Manage all user accounts from a dedicated **Admin Dashboard**.\n\n---\n\n## 2. Tech Stack\n\n| Category | Technology |\n|---|---|\n| **Framework** | Next.js 15 (App Router + API Routes) |\n| **UI Library** | React 19 |\n| **Language** | TypeScript 5.9 |\n| **Styling** | Tailwind CSS 4.1, tw-animate-css |\n| **Icons** | Lucide React |\n| **Animations** | Framer Motion (motion 12) |\n| **Fonts** | Inter (sans), Playfair Display (serif) via `next/font` |\n| **Primary Database** | MongoDB Atlas via Mongoose 9 |\n| **Drama/Media Data** | Supabase (PostgreSQL + object storage) |\n| **Authentication** | Custom JWT (`jose` 6) — HTTP-only cookies |\n| **Password Hashing** | bcryptjs (salt rounds: 10) |\n| **Email** | Nodemailer 8 (Gmail SMTP) |\n| **Form Handling** | react-hook-form 7, Zod 4 |\n| **Vi",
+    "observations": [
+      "Has lint script (code quality discipline).",
+      "Has build script.",
+      "Has dev script.",
+      "No test files detected — gap to flag in portfolio narrative.",
+      "No CI detected.",
+      "No Dockerfile (acceptable for frontend-focused repos).",
+      "Provides .env.example — good DX practice.",
+      "No LICENSE file (fine for personal projects, matters for OSS positioning).",
+      "README length: 19695 chars. Badges: False. Screenshots: False. Install section: False. Architecture section: True."
+    ],
+    "source_to_config_ratio": 14.67,
+    "docs_to_source_ratio": 0.023
+  },
+  {
+    "slug": "03_hamara_rozgar",
+    "name": "hamara-rozgar",
+    "path": "/home/z/my-project/repos/hamara-rozgar",
+    "total_files": 86,
+    "languages": {
+      "Other": 64,
+      "JavaScript": 6,
+      "JSON": 3,
+      "Java": 3,
+      "HTML": 2,
+      "JavaScript (React)": 2,
+      "CSS": 2,
+      "Markdown": 1,
+      "Env": 1,
+      "Shell": 1,
+      "Python": 1
+    },
+    "categories": {
+      "docs": 1,
+      "other": 64,
+      "config": 4,
+      "script": 1,
+      "source": 13,
+      "test": 3
+    },
+    "lines_by_language": {
+      "CSS": 1700,
+      "JavaScript": 1229,
+      "JavaScript (React)": 1158,
+      "Python": 777,
+      "HTML": 275,
+      "Java": 3
+    },
+    "total_source_lines": 5142,
+    "largest_files": [
+      {
+        "path": "Hamara_Rozgar_Signed.apk",
+        "size": 3354070,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "Hamara_Rozgar.apk",
+        "size": 3308407,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "maps-scrape/scraped_providers.csv",
+        "size": 2294329,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "Antigravity_Trace_Logs.zip",
+        "size": 229236,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "package-lock.json",
+        "size": 118984,
+        "language": "JSON",
+        "category": "config"
+      },
+      {
+        "path": "src/App.jsx",
+        "size": 56864,
+        "language": "JavaScript (React)",
+        "category": "source"
+      },
+      {
+        "path": "src/agents/Orchestrator.js",
+        "size": 55705,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "android/gradle/wrapper/gradle-wrapper.jar",
+        "size": 43764,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "maps-scrape/hamara_rozgar_scraper.py",
+        "size": 42737,
+        "language": "Python",
+        "category": "source"
+      },
+      {
+        "path": "src/index.css",
+        "size": 34970,
+        "language": "CSS",
+        "category": "source"
+      }
+    ],
+    "key_files_found": {
+      "README.md": "README.md",
+      "package.json": "package.json",
+      "package-lock.json": "package-lock.json",
+      "vite.config.js": "vite.config.js",
+      ".env.example": ".env.example"
+    },
+    "key_file_contents": {
+      "README.md": "# Hamara-Rozgar (RozgarOrch) 🛠️\n### Challenge 2: AI Service Orchestrator for Informal Economy - Google Antigravity Hackathon\n\n**Hamara-Rozgar (RozgarOrch)** is a premium, agentic, AI-driven marketplace orchestrator designed to solve fragmentation in Pakistan's informal economy. By bridging the digital divide for daily wage workers (plumbers, electricians, tutors, AC technicians, beauticians, mechanics), this solution automates the end-to-end booking lifecycle. It parses multi-turn conversational queries across Urdu, Roman Urdu, and English, executes proximity matching, performs travel-adjusted pricing, registers persistent transactions, and resolves real-time anomalies.\n\nThe project is **100% Evacuated from Google Cloud**, running fully offline and using open-source/self-hosted equivalents (OSM, Supabase, Ollama, Groq, GitHub Models) inside a beautiful **Widescreen Native Web Dashboard** featuring a **Chronological Agentic Execution Timeline**.\n\n---\n\n## 🏛️ System Architecture\n\nOur solution is built on a **Decoupled Multi-Agent Cooperative Pipeline**. Rather than a monolithic model, tasks are delegated to specialized micro-agents that communicate parameters sequentially and react dynamically to operational state updates:\n\n```mermaid\ngraph TD\n    User([User Natural Query]) --> IA[IntentAgent]\n    IA -->|Extracts Specialization & Location| DA[DiscoveryAgent]\n    DA -->|Live Geocoding / Haversine Scoring| PA[PricingAgent]\n    PA -->|Travel & Surge Quote Calculations| BA[BookingAgent]\n    BA -->|Supabase Cloud / Local Sync| Transaction[(Persistent Booking Ledger)]\n    Transaction -->|Provider Cancellation Trigger| DisputeA[DisputeAgent]\n    DisputeA -->|Self-Healing Reschedule & Credit Voucher| DA\n```\n\n### The 5 Cooperative micro-agents:\n1. **IntentAgent (Multilingual Parsing & Context Memory)**:\n   * Extracts target specialization and location parameters across English, formal Urdu script, and colloquial Roman Urdu slang (e.g., *\"yar AC kaam nahi kr rha thanda\"*).\n   * Fully integrates multiple selectable LLM parsing engines:\n     - **Local Slang Parser (Regex)**: Ultra-fast offline dictionary fallback.\n     - **Ollama**: Private, self-hosted offline LLM intent parsing.\n     - **Groq Cloud API**: Free-tier Open LLM intent parsing.\n     - **GitHub Models API**: High-fidelity intent parsing.\n     - **Auto-Failover**: If Groq API fails or is rate-limited, it automatically fails over to the GitHub Models API (if configured) before resorting to regex.\n   * Maintains multi-turn context memory across conversation history.\n\n2. **DiscoveryAgent (Proximity & Workload Optimizer)**:\n   * Connects directly to browser GPS Geolocation coordinates on startup.\n   * If a custom location or landmark is specified, it queries the **OpenStreetMap Nominatim API** (free & open-source) to geocode precise coordinates.\n   * Scores and ranks matching specialists using a **6-Factor Utility Function**:\n     $$\\text{Utility} = (d \\times 0.25) + (R \\times 0.20) + (L \\times 0.20) + (P \\times 0.15) + (C \\times 0.10) + (S \\times 0.10)$$\n     *(Where $d$ = distance, $R$ = rating, $L$ = reliability score, $P$ = price match, $C$ = cancellation rate, $S$ = sector matching).*\n   * Queries nearby physical listings dynamically using OpenStreetMap Nominatim search indexes.\n\n3. **PricingAgent (Dynamic Cost Generator)**:\n   * Formulates transparent billing invoices consisting of:\n     * **Base Rate:** The standard benchmark service fee.\n     * **Travel Allowance:** Multiplied dynamically by coordinate distance (50 PKR/km).\n     * **Urgency Surcharge:** +30% weight for immediately requested task cards.\n     * **Surge Surplus:** +15% dynamic surcharge if active provider capacity is constrained.\n     * **Loyalty Discount:** -10% deduction automatically applied to retain repeat clients.\n\n4. **BookingAgent (Persistent Transaction Ledger)**:\n   * Syncs active transaction records with **Supabase Cloud Database** via a lightweight direct REST API (sub-250KB footprint, zero bulky SDKs).\n   * Incorporates an offline fallback to browser local storage (`localStorage`) in case database connections are pending, ensuring uninterrupted user interactions.\n\n5. **DisputeAgent (Self-Healing Fallback Engine)**:\n   * Intercepts post-booking real-time anomalies (such as a provider cancelling en-route).\n   * Automatically launches a new discovery query, re-assigns the job card to the next-best provider, issues an automated 150 PKR voucher credit to the customer, and updates the transaction status in Supabase.\n\n---\n\n## 🔌 API Integrations & Payload Schemas\n\n### 1. OpenStreetMap Nominatim Geocoding API\nConverts human sector and colony names to precise geocodes:\n* **Endpoint:** `GET https://nominatim.openstreetmap.org/search?q={LocationName},Islamabad,Pakistan&format=json&limit=1`\n* **Response Output:** Extracts `lat`/`lon` dynamically.\n\n### 2. GitHub Models API (High-Fidelity NLP)\nStandard OpenAI-compatible completions endpoint:\n* **Endpoint:** `POST https://models.inference.ai.azure.com/chat/completions`\n* **Headers:** Pass standard token `Authorization: Bearer <githubToken>`.\n\n### 3. Supabase Database REST API\nSynchronizes transactional statuses across client states:\n* **Endpoint:** `POST {supabaseUrl}/rest/v1/bookings`\n* **Headers:** Pass `apikey: <supabaseKey>` and `Authorization: Bearer <supabaseKey>`.\n* **Database Schema (PostgreSQL):**\n```sql\ncreate table bookings (\n  id text primary key,\n  provider_id text not null,\n  provider_name text not null,\n  provider_phone text,\n  service text not null,\n  location text not null,\n  time_slot text not null,\n  pricing jsonb not null,\n  status text not null,\n  timestamp text not null,\n  location_coords jsonb\n);\n```\n\n---\n\n## 🌟 Premium Design Aesthetics\n\nThe interface is built completely on **Vanilla CSS** (zero external bloated styling dependencies) optimized for widescreen workspaces:\n* **Widescreen Native Workspace Layout:** Grid-based multi-panel structure (`340px 1fr 440px`) utilizing modern glassmorphic panels and Harmonious synthwave tech styling.\n* **Chronological Agentic Timeline Tree:** Displays active stages (Intent Parsing, Geocoding, Registry Scan, Dynamic Pricing, Ledger Booking, Real-time Tracking). Node states animate dynamically (in-progress, completed, failed, pending) with expandable accordion drawers exposing **Agent Thoughts, Reasoning, and Tool Logs**.\n* **Proximity Location Hub Bar:** Real-time indicator displaying the current GPS coordinate lock vs manual landmark overrides.\n* **Transaction Ledger Viewer:** Full-screen dashboard table grid displaying histories and active status sync badges directly connected to Supabase.\n\n---\n\n## 📦 Mobile App Compilation (Capacitor)\n\nThe project includes a pre-configured native wrapper directory (`android/`) scaffolding standard Gradle environments. \n\nTo compile this web application into a native standalone **Android APK** without needing manual Android Studio setup, run our executable scripts in the root directory:\n* **Linux/macOS:** Run `./build_apk.sh` in your terminal.\n* **Windows:** Double-click the file `build_apk.bat`.\n\nThe compiler will automatically bundle React, synchronize native Capacitor resources, and execute Gradle to generate the standalone installer package at:\n`android/app/build/outputs/apk/release/app-release-unsigned.apk`\n\n---\n\n## 🚀 Installation & Local Run\n\n1. Navigate to the project root and install all node packages:\n   ```bash\n   cd service-orchestrator\n   npm install\n   ```\n2. Start the local Vite server:\n   ```bash\n   npm run dev\n   ```\n3. Open `http://localhost:5173` in your browser.\n4. **Demo Flow:**\n   * Enter your Supabase URL and Anon Key in the left Credentials card to see the badge transition to green (`Supabase Connected`).\n   * Select your preferred intent parser engine (Regex, Ollama, Groq, or GitHub Models).\n   * Submit a slang query (e.g. *\"yaar AC bilkul thanda nhi kar rha G-13 me\"*).\n   * Watch the Timeline nodes activate, geocoding coordinates on OpenStreetMap, ranking candidates, and committing the booking to your remote Supabase cloud table.\n",
+      "package.json": "{\n  \"name\": \"service-orchestrator\",\n  \"private\": true,\n  \"version\": \"0.0.0\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"vite build\",\n    \"lint\": \"eslint .\",\n    \"preview\": \"vite preview\"\n  },\n  \"dependencies\": {\n    \"@capacitor/android\": \"^8.3.4\",\n    \"@capacitor/core\": \"^8.3.4\",\n    \"lucide-react\": \"^1.16.0\",\n    \"react\": \"^19.2.6\",\n    \"react-dom\": \"^19.2.6\"\n  },\n  \"devDependencies\": {\n    \"@capacitor/cli\": \"^8.3.4\",\n    \"@eslint/js\": \"^10.0.1\",\n    \"@types/react\": \"^19.2.14\",\n    \"@types/react-dom\": \"^19.2.3\",\n    \"@vitejs/plugin-react\": \"^6.0.1\",\n    \"eslint\": \"^10.3.0\",\n    \"eslint-plugin-react-hooks\": \"^7.1.1\",\n    \"eslint-plugin-react-refresh\": \"^0.5.2\",\n    \"globals\": \"^17.6.0\",\n    \"vite\": \"^8.0.12\"\n  }\n}\n",
+      "package-lock.json": "[lock file present]",
+      "vite.config.js": "import { defineConfig } from 'vite'\nimport react from '@vitejs/plugin-react'\n\n// https://vite.dev/config/\nexport default defineConfig({\n  plugins: [react()],\n})\n",
+      ".env.example": "# Hamara Rozgar - Environment Configuration Template\n# Copy this file to .env and configure your secret credentials.\n\n# Orchestration Configuration\n# Options for VITE_NLP_ENGINE: github (default), regex, ollama, groq\nVITE_NLP_ENGINE=github\n# Options for VITE_MAP_ENGINE: osm (default), offline\nVITE_MAP_ENGINE=osm\n\n# 🤖 Groq Cloud AI Engine (Free & Fast open-source LLMs)\nVITE_GROQ_API_KEY=\"\"\n\n# 🤖 GitHub Models API (High-Fidelity models like gpt-4o-mini, gpt-4o, Llama-3)\nVITE_GITHUB_TOKEN=\"\"\nVITE_GITHUB_MODEL=\"gpt-4o-mini\"\n\n# 🤖 Ollama local server (Fully self-hosted NLP)\nVITE_OLLAMA_URL=\"http://localhost:11434\"\nVITE_OLLAMA_MODEL=\"llama3\"\n\n# ⚡ Supabase Database Backend (Zero-SDK REST sync)\nVITE_SUPABASE_URL=\"\"\nVITE_SUPABASE_ANON_KEY=\"\"\n"
+    },
+    "package_json": {
+      "name": "service-orchestrator",
+      "version": "0.0.0",
+      "private": true,
+      "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint .",
+        "preview": "vite preview"
+      },
+      "dependencies": {
+        "@capacitor/android": "^8.3.4",
+        "@capacitor/core": "^8.3.4",
+        "lucide-react": "^1.16.0",
+        "react": "^19.2.6",
+        "react-dom": "^19.2.6"
+      },
+      "devDependencies": {
+        "@capacitor/cli": "^8.3.4",
+        "@eslint/js": "^10.0.1",
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^6.0.1",
+        "eslint": "^10.3.0",
+        "eslint-plugin-react-hooks": "^7.1.1",
+        "eslint-plugin-react-refresh": "^0.5.2",
+        "globals": "^17.6.0",
+        "vite": "^8.0.12"
+      },
+      "engines": {},
+      "type": "module"
+    },
+    "frameworks": [
+      "React ^19.2.6"
+    ],
+    "libraries": [
+      "lucide-react icons",
+      "Vite ^8.0.12",
+      "ESLint"
+    ],
+    "test_files": [
+      "scratch/test_parse.js",
+      "android/app/src/androidTest/java/com/getcapacitor/myapp/ExampleInstrumentedTest.java",
+      "android/app/src/test/java/com/getcapacitor/myapp/ExampleUnitTest.java"
+    ],
+    "has_tests": true,
+    "ci_files": [],
+    "has_ci": false,
+    "docker_files": [],
+    "has_docker": false,
+    "env_files": [
+      ".env.example"
+    ],
+    "dir_tree": "./\n  .env.example\n  .gitignore\n  Antigravity_Trace_Logs.zip\n  Hamara_Rozgar.apk\n  Hamara_Rozgar_Documentation.pdf\n  Hamara_Rozgar_Signed.apk\n  README.md\n  build_apk.bat\n  build_apk.sh\n  capacitor.config.json\n  documentation.html\n  eslint.config.js\n  index.html\n  package-lock.json\n  package.json\n  ... +1 more files\n  android/\n    .gitignore\n    build.gradle\n    capacitor.settings.gradle\n    gradle.properties\n    gradlew\n    gradlew.bat\n    settings.gradle\n    variables.gradle\n    app/\n    gradle/\n  maps-scrape/\n    hamara_rozgar_scraper.py\n    scraped_providers.csv\n    scraper.progress\n    twin_cities_grid.csv\n  public/\n    favicon.svg\n    icons.svg\n  scratch/\n    test_parse.js\n  src/\n    App.css\n    App.jsx\n    firebase.js\n    index.css\n    main.jsx\n    agents/\n    assets/\n    data/",
+    "commit_stats": {
+      "commit_count_available": 100,
+      "recent_commits": [
+        {
+          "hash": "ded3a8b",
+          "date": "2026-06-28",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "e127133",
+          "date": "2026-06-28",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "6d18e78",
+          "date": "2026-06-27",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "0575ba2",
+          "date": "2026-06-27",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "9aee77f",
+          "date": "2026-06-27",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "2b5118a",
+          "date": "2026-06-27",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "c005476",
+          "date": "2026-06-26",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "25b11d7",
+          "date": "2026-06-26",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "ca510db",
+          "date": "2026-06-26",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "39ac9c0",
+          "date": "2026-06-25",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "8e50867",
+          "date": "2026-06-25",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "e9b58a9",
+          "date": "2026-06-25",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "71d2ff5",
+          "date": "2026-06-24",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "f00322f",
+          "date": "2026-06-24",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "5da3af7",
+          "date": "2026-06-23",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "5cc45ae",
+          "date": "2026-06-23",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "3c96356",
+          "date": "2026-06-23",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "5bd6ce8",
+          "date": "2026-06-23",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "fb657e0",
+          "date": "2026-06-22",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "24d0569",
+          "date": "2026-06-22",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "3651893",
+          "date": "2026-06-22",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "611e08c",
+          "date": "2026-06-21",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "2056c7a",
+          "date": "2026-06-21",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "d6a8284",
+          "date": "2026-06-21",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "8af422d",
+          "date": "2026-06-20",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "806a23e",
+          "date": "2026-06-20",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "aad5348",
+          "date": "2026-06-20",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "fefa312",
+          "date": "2026-06-19",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "973ca16",
+          "date": "2026-06-19",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        },
+        {
+          "hash": "9364d13",
+          "date": "2026-06-19",
+          "subject": "chore: incremental update of scraped local businesses & progress"
+        }
+      ],
+      "contributors": {
+        "github-actions[bot]": 100
+      },
+      "first_commit_date": "2026-05-27",
+      "last_commit_date": "2026-06-28"
+    },
+    "readme_excerpt": "# Hamara-Rozgar (RozgarOrch) 🛠️\n### Challenge 2: AI Service Orchestrator for Informal Economy - Google Antigravity Hackathon\n\n**Hamara-Rozgar (RozgarOrch)** is a premium, agentic, AI-driven marketplace orchestrator designed to solve fragmentation in Pakistan's informal economy. By bridging the digital divide for daily wage workers (plumbers, electricians, tutors, AC technicians, beauticians, mechanics), this solution automates the end-to-end booking lifecycle. It parses multi-turn conversational queries across Urdu, Roman Urdu, and English, executes proximity matching, performs travel-adjusted pricing, registers persistent transactions, and resolves real-time anomalies.\n\nThe project is **100% Evacuated from Google Cloud**, running fully offline and using open-source/self-hosted equivalents (OSM, Supabase, Ollama, Groq, GitHub Models) inside a beautiful **Widescreen Native Web Dashboard** featuring a **Chronological Agentic Execution Timeline**.\n\n---\n\n## 🏛️ System Architecture\n\nOur solution is built on a **Decoupled Multi-Agent Cooperative Pipeline**. Rather than a monolithic model, tasks are delegated to specialized micro-agents that communicate parameters sequentially and react dynamically to operational state updates:\n\n```mermaid\ngraph TD\n    User([User Natural Query]) --> IA[IntentAgent]\n    IA -->|Extracts Specialization & Location| DA[DiscoveryAgent]\n    DA -->|Live Geocoding / Haversine Scoring| PA[PricingAgent]\n    PA -->|Travel & Surge Quote Calculations| BA[BookingAgent]\n    BA -->|Supabase Cloud / Local Sync| Transaction[(Persistent Booking Ledger)]\n    Transaction -->|Provider Cancellation Trigger| DisputeA[DisputeAgent]\n    DisputeA -->|Self-Healing Reschedule & Credit Voucher| DA\n```\n\n### The 5 Cooperative micro-agents:\n1. **IntentAgent (Multilingual Parsing & Context Memory)**:\n   * Extracts target specialization and location parameters across English, formal Urdu script, and colloquial Roman Urdu slang (e.g., *\"yar AC kaam nahi kr rha thanda\"*).\n   * Fully integrates multiple selectable LLM parsing engines:\n     - **Local Slang Parser (Regex)**: Ultra-fast offline dictionary fallback.\n     - **Ollama**: Private, self-hosted offline LLM intent parsing.\n     - **Groq Cloud API**: Free-tier Open LLM intent parsing.\n     - **GitHub Models API**: High-fidelity intent parsing.\n     - **Auto-Failover**: If Groq API fails or is rate-limited, it automatically fails over to the GitHub Models API (if configured) before resorting to regex.\n   * Maintains multi-turn context memory across conversation history.\n\n2. **DiscoveryAgent (Proximity & Workload Optimizer)**:\n   * Connects directly to browser GPS Geolocation coordinates on startup.\n   * If a custom location or landmark is specified, it queries the **OpenStreetMap Nominatim API** (free & open-source) to geocode precise coordinates.\n   * Scores and ranks matching specialists using a **6-Factor Utility Function**:\n     $$\\text{Utility} = (d \\times 0.25) + (R \\times 0.20) + (L \\times 0.20) + ",
+    "observations": [
+      "Has lint script (code quality discipline).",
+      "Has build script.",
+      "Has dev script.",
+      "Has 3 test file(s) — testing discipline present.",
+      "No CI detected.",
+      "No Dockerfile (acceptable for frontend-focused repos).",
+      "Provides .env.example — good DX practice.",
+      "No LICENSE file (fine for personal projects, matters for OSS positioning).",
+      "README length: 8062 chars. Badges: False. Screenshots: False. Install section: True. Architecture section: True."
+    ],
+    "source_to_config_ratio": 3.25,
+    "docs_to_source_ratio": 0.077
+  },
+  {
+    "slug": "04_gcr_contacts",
+    "name": "gcr-contacts",
+    "path": "/home/z/my-project/repos/gcr-contacts",
+    "total_files": 32,
+    "languages": {
+      "JavaScript": 12,
+      "Other": 7,
+      "JavaScript (React)": 4,
+      "Markdown": 3,
+      "JSON": 3,
+      "JavaScript (ESM)": 2,
+      "CSS": 1
+    },
+    "categories": {
+      "docs": 3,
+      "config": 3,
+      "other": 7,
+      "source": 19
+    },
+    "lines_by_language": {
+      "JavaScript": 1385,
+      "CSS": 563,
+      "JavaScript (React)": 238,
+      "JavaScript (ESM)": 25
+    },
+    "total_source_lines": 2211,
+    "largest_files": [
+      {
+        "path": "package-lock.json",
+        "size": 208271,
+        "language": "JSON",
+        "category": "config"
+      },
+      {
+        "path": "app/favicon.ico",
+        "size": 25931,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "app/globals.css",
+        "size": 16445,
+        "language": "CSS",
+        "category": "source"
+      },
+      {
+        "path": "lib/emailResolver.js",
+        "size": 11882,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "lib/taSheet.js",
+        "size": 11858,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "app/dashboard/page.js",
+        "size": 9080,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "app/page.js",
+        "size": 3918,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "lib/auth.js",
+        "size": 3058,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "lib/facultyCache.js",
+        "size": 3044,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "components/PersonRow.jsx",
+        "size": 2955,
+        "language": "JavaScript (React)",
+        "category": "source"
+      }
+    ],
+    "key_files_found": {
+      "README.md": "README.md",
+      "package.json": "package.json",
+      "package-lock.json": "package-lock.json",
+      "jsconfig.json": "jsconfig.json",
+      "next.config.mjs": "next.config.mjs"
+    },
+    "key_file_contents": {
+      "README.md": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n# or\nbun dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.\n\n## Learn More\n\nTo learn more about Next.js, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n\nYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.\n",
+      "package.json": "{\n  \"name\": \"gcr-contacts\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"eslint\"\n  },\n  \"dependencies\": {\n    \"next\": \"16.2.7\",\n    \"react\": \"19.2.4\",\n    \"react-dom\": \"19.2.4\"\n  },\n  \"devDependencies\": {\n    \"eslint\": \"^9\",\n    \"eslint-config-next\": \"16.2.7\"\n  }\n}\n",
+      "package-lock.json": "[lock file present]",
+      "jsconfig.json": "{\n  \"compilerOptions\": {\n    \"paths\": {\n      \"@/*\": [\"./*\"]\n    }\n  }\n}\n",
+      "next.config.mjs": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  // Allow Google profile photos and faculty image URLs in <img> tags\n  images: {\n    remotePatterns: [\n      { protocol: 'https', hostname: 'lh3.googleusercontent.com' },\n      { protocol: 'https', hostname: 'isb.nu.edu.pk' },\n    ],\n  },\n};\n\nexport default nextConfig;\n"
+    },
+    "package_json": {
+      "name": "gcr-contacts",
+      "version": "0.1.0",
+      "private": true,
+      "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint"
+      },
+      "dependencies": {
+        "next": "16.2.7",
+        "react": "19.2.4",
+        "react-dom": "19.2.4"
+      },
+      "devDependencies": {
+        "eslint": "^9",
+        "eslint-config-next": "16.2.7"
+      },
+      "engines": {},
+      "type": null
+    },
+    "frameworks": [
+      "Next.js 16.2.7 (App Router)",
+      "React 19.2.4"
+    ],
+    "libraries": [
+      "ESLint"
+    ],
+    "test_files": [],
+    "has_tests": false,
+    "ci_files": [],
+    "has_ci": false,
+    "docker_files": [],
+    "has_docker": false,
+    "env_files": [],
+    "dir_tree": "./\n  .gitignore\n  AGENTS.md\n  CLAUDE.md\n  README.md\n  eslint.config.mjs\n  jsconfig.json\n  next.config.mjs\n  package-lock.json\n  package.json\n  app/\n    favicon.ico\n    globals.css\n    layout.js\n    page.js\n    api/\n    dashboard/\n  components/\n    CopyButton.jsx\n    CourseCard.jsx\n    PersonRow.jsx\n    SkeletonCard.jsx\n  lib/\n    auth.js\n    classroom.js\n    emailResolver.js\n    facultyCache.js\n    semesterFilter.js\n    studentRegex.js\n    taSheet.js\n  public/\n    file.svg\n    globe.svg\n    next.svg\n    vercel.svg\n    window.svg",
+    "commit_stats": {
+      "commit_count_available": 7,
+      "recent_commits": [
+        {
+          "hash": "22b0cea",
+          "date": "2026-06-07",
+          "subject": "fix: coverage-score tie-breaking + discard unresolvable GCR teachers"
+        },
+        {
+          "hash": "d6e1ebf",
+          "date": "2026-06-07",
+          "subject": "fix: two-pass matching to correctly handle multi-batch course offerings"
+        },
+        {
+          "hash": "be55d6b",
+          "date": "2026-06-07",
+          "subject": "fix: Step 0 TA sheet check must run for ALL GCR teachers, not just looksLikeStudent"
+        },
+        {
+          "hash": "1c35a7b",
+          "date": "2026-06-07",
+          "subject": "fix: fetch both TASheet and LDSheet tabs (not just TASheet)"
+        },
+        {
+          "hash": "267bf4d",
+          "date": "2026-06-07",
+          "subject": "feat: integrate TA/LD allocation sheet as Step 0 of email resolution pipeline"
+        },
+        {
+          "hash": "d13438b",
+          "date": "2026-06-05",
+          "subject": "feat: initial implementation of GCR Contacts website"
+        },
+        {
+          "hash": "11e73f0",
+          "date": "2026-06-05",
+          "subject": "Initial commit from Create Next App"
+        }
+      ],
+      "contributors": {
+        "Ammar Asad": 7
+      },
+      "first_commit_date": "2026-06-05",
+      "last_commit_date": "2026-06-07"
+    },
+    "readme_excerpt": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n# or\nbun dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.\n\n## Learn More\n\nTo learn more about Next.js, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n\nYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.\n",
+    "observations": [
+      "Has lint script (code quality discipline).",
+      "Has build script.",
+      "Has dev script.",
+      "No test files detected — gap to flag in portfolio narrative.",
+      "No CI detected.",
+      "No Dockerfile (acceptable for frontend-focused repos).",
+      "No .env.example found.",
+      "No LICENSE file (fine for personal projects, matters for OSS positioning).",
+      "README length: 1449 chars. Badges: False. Screenshots: False. Install section: False. Architecture section: False."
+    ],
+    "source_to_config_ratio": 6.33,
+    "docs_to_source_ratio": 0.158
+  },
+  {
+    "slug": "05_gcr_resources_fetch",
+    "name": "gcr-resources-fetch",
+    "path": "/home/z/my-project/repos/gcr-resources-fetch",
+    "total_files": 19,
+    "languages": {
+      "JavaScript": 7,
+      "Other": 5,
+      "JSON": 3,
+      "Markdown": 1,
+      "Text": 1,
+      "CSS": 1,
+      "HTML": 1
+    },
+    "categories": {
+      "docs": 2,
+      "source": 9,
+      "config": 3,
+      "other": 5
+    },
+    "lines_by_language": {
+      "JavaScript": 3088,
+      "CSS": 589,
+      "HTML": 141
+    },
+    "total_source_lines": 3818,
+    "largest_files": [
+      {
+        "path": "lib/jszip.min.js",
+        "size": 97630,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "lib/zipper.js",
+        "size": 35281,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "sidebar/sidebar.js",
+        "size": 20245,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "content.js",
+        "size": 19378,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "lib/fetcher.js",
+        "size": 18570,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "README.md",
+        "size": 18419,
+        "language": "Markdown",
+        "category": "docs"
+      },
+      {
+        "path": "sidebar/sidebar.css",
+        "size": 15154,
+        "language": "CSS",
+        "category": "source"
+      },
+      {
+        "path": "icons/icon128.png",
+        "size": 12668,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "background.js",
+        "size": 12405,
+        "language": "JavaScript",
+        "category": "source"
+      },
+      {
+        "path": "sidebar/sidebar.html",
+        "size": 7450,
+        "language": "HTML",
+        "category": "source"
+      }
+    ],
+    "key_files_found": {
+      "README.md": "README.md",
+      "LICENSE": "LICENSE"
+    },
+    "key_file_contents": {
+      "README.md": "# GCR Fetch — Google Classroom Resource Downloader\n\n<p align=\"center\">\n  <strong>Bulk-download every resource from a Google Classroom course as a single ZIP archive.</strong>\n</p>\n\n<p align=\"center\">\n  <a href=\"#install\"><strong>🚀 Quick Install Guide (For Users)</strong></a> &nbsp;•&nbsp; \n  <a href=\"#dev-setup\"><strong>🛠️ Developer Setup & Self-Hosting</strong></a>\n</p>\n\n---\n\n## The Problem\n\nIf you've ever used Google Classroom during exam season, you know the pain. Teachers share resources — PDFs, slides, documents, spreadsheets — across dozens of posts, announcements, and classwork items throughout the semester. When exam day approaches and you finally sit down to study, you realize you need to download all of them first. That means scrolling through the entire classroom feed, from the oldest post at the bottom to the newest at the top, hunting for every attachment one by one.\n\nThis process is slow, tedious, and disorganized. A typical course with a semester's worth of material can easily take 20–25 minutes of manual clicking and downloading. Worse, it becomes a procrastination trigger — the friction of \"I have to download everything first\" is enough to push students away from preparing for their exams entirely. Resources are scattered across Stream posts, Classwork topics, and announcements with no centralized way to grab them all.\n\n**GCR Fetch eliminates this entirely.** One click scans your entire course and bundles every downloadable resource into a single ZIP file.\n\n---\n\n## Overview\n\nGCR Fetch is a Chrome extension (Manifest V3) that integrates directly into Google Classroom. When you open a course page, a floating \"GCR Fetch\" button appears. Clicking it opens a sidebar panel where you can:\n\n- **Sign in** with your Google account (OAuth 2.0, works with any Google account regardless of your Chrome profile)\n- **Scan** the course for all resources using a hybrid detection approach (DOM scraping + Google Classroom API)\n- **Browse, filter, and select** which files to download\n- **Download** everything as a neatly organized ZIP archive\n\nThe extension also handles non-downloadable resources (YouTube links, Google Forms, Drive folders, external URLs) by generating a polished, interactive **External Resources Dashboard** — an HTML file included in the ZIP with search, filtering, and one-click copy/open functionality.\n\n---\n\n## Key Features\n\n| Feature | Description |\n|---|---|\n| **Hybrid Resource Detection** | Combines DOM scraping (finds what's visible on the page) with Google Classroom REST API calls (finds attachments behind \"See more\", in collapsed topics, or in unexpanded classwork). No resource goes undetected. |\n| **Smart File Conversion** | Google Docs, Sheets, Slides, and Drawings are automatically exported to their Microsoft Office equivalents (`.docx`, `.xlsx`, `.pptx`) or as PDFs. Optionally convert all documents to PDF with one toggle. |\n| **Organized ZIP Archives** | Choose between a flat file structure or a categorized structure that groups files by their Classroom topic/post. Filename collisions are resolved automatically with numeric suffixes. |\n| **External Resources Dashboard** | YouTube videos, Google Forms, Drive folders, and web links are compiled into a beautifully designed, self-contained HTML page with dark/light mode, search, category filters, and clipboard copy buttons. |\n| **OAuth 2.0 with Any Account** | Uses `chrome.identity.launchWebAuthFlow` with a serverless Vercel backend for secure token exchange. Works with any Google account — no need to be signed into Chrome with that account. |\n| **Student Submissions** | Optionally include your own submitted work (\"Your Work\" attachments) in the download. |\n| **Security-First Design** | No `innerHTML`/`outerHTML` usage anywhere. All filenames are sanitized against directory traversal. API calls are restricted to an HTTPS-only Google-domain allowlist. Client secret never touches the extension — it lives only on the Vercel backend. |\n\n---\n\n## How It Works\n\nGCR Fetch follows a multi-phase architecture to discover and download resources:\n\n### Phase 1: DOM Scraping\n\nWhen you click **Scan**, the content script (`content.js`) parses the Google Classroom page DOM to find all links that point to downloadable resources — Drive files, Google Docs/Sheets/Slides, direct file links, and external URLs. It also extracts topic context for each file by traversing up the DOM to find the nearest heading or topic container. This catches everything that's currently rendered on the page.\n\n### Phase 2: Google Classroom API Scan\n\nThe fetcher module (`lib/fetcher.js`) takes the DOM-scraped results and augments them by querying four Google Classroom API endpoints:\n\n1. **Coursework** — Assignments and their attached materials\n2. **Course Materials** — Resources posted under the Classwork tab\n3. **Announcements** — Stream posts with attachments\n4. **Student Submissions** — Your own submitted work (optional)\n\nEach API response is parsed for Drive files, links, YouTube videos, and Google Forms. URLs embedded in post descriptions are also extracted via regex. Results are de-duplicated against the DOM findings by Drive file ID and URL.\n\n### Phase 3: ZIP Assembly\n\nSelected files are downloaded through the authenticated background proxy and assembled into a ZIP archive using JSZip:\n\n- **Downloadable files** (PDFs, Office docs, images, etc.) are fetched as blobs via the Drive API\n- **Google Workspace files** (Docs, Sheets, Slides, Drawings) are exported to their corresponding Office formats or PDFs\n- **External links** (YouTube, Forms, folders, web URLs) are compiled into the interactive HTML dashboard\n- The ZIP is compressed with DEFLATE level 6 and triggered as a browser download\n\n### Architecture Overview\n\n```\n┌─────────────────────────────────────────────────────┐\n│                  Google Classroom                    │\n│              (classroom.google.com)                  │\n└──────────────┬──────────────────────┬───────────────┘\n               │                      │\n    ┌──────────▼──────────┐  ┌───────▼──────────────┐\n    │     content.js       │  │   Google Classroom    │\n    │  (DOM Scraping +     │  │   REST API            │\n    │   UI Injection)      │  │  (Coursework,         │\n    └──────────┬──────────┘  │   Materials,          │\n               │              │   Announcements,      │\n    ┌──────────▼──────────┐  │   Submissions)        │\n    │   sidebar/           │  └───────┬──────────────┘\n    │   (HTML + CSS + JS)  │          │\n    │   User-facing panel  │          │\n    └──────────┬──────────┘          │\n               │                      │\n    ┌──────────▼──────────────────────▼──┐\n    │          background.js              │\n    │   (MV3 Service Worker)             │\n    │   - OAuth 2.0 auth flow            │\n    │   - Token management & refresh     │\n    │   - Authenticated fetch proxy      │\n    │   - Origin allowlist enforcement   │\n    └──────────┬────────────────────────┘\n               │\n    ┌──────────▼──────────┐\n    │   Vercel Backend     │\n    │   (api/token.js)     │\n    │   - Code → Tokens    │\n    │   - Token refresh    │\n    │   - Client secret    │\n    │     stays here only  │\n    └─────────────────────┘\n```\n\n### Message Flow\n\n```\nSidebar ──postMessage──▶ Content Script ──chrome.runtime.sendMessage──▶ Background (Service Worker)\n                                    │                                      │\n                                    │                          chrome.identity.launchWebAuthFlow\n                                    │                                      │\n                                    │                              Google OAuth\n                                    │                                      │\n                                    │                          Vercel Backend (/api/token)\n                                    │                                      │\n                                    ◀──────────────────────────────────────┘\n                               Auth Token / API Data\n```\n\n---\n\n## Target Audience\n\n- **Students** who need to bulk-download course materials for exam preparation, offline study, or archival\n- **Educators** who want to save a course's shared resources before the classroom is archived or deleted\n- **Anyone** who uses Google Classroom and has experienced the tedium of downloading resources one by one\n\n---\n\n## Project Structure\n\n```\ngcr-resources-fetch/\n├── manifest.json              # Chrome Extension manifest (MV3)\n├── background.js              # Service worker: OAuth, token management, fetch proxy\n├── content.js                 # Content script: DOM scraping, UI injection, message relay\n├── icons/\n│   ├── icon16.png             # Extension icon (16x16)\n│   ├── icon48.png             # Extension icon (48x48)\n│   └── icon128.png            # Extension icon (128x128)\n├── lib/\n│   ├── fetcher.js             # Hybrid resource fetcher (DOM + Classroom API)\n│   ├── zipper.js              # ZIP creation, PDF conversion, HTML dashboard generator\n│   └── jszip.min.js           # JSZip library for archive creation\n├── sidebar/\n│   ├── sidebar.html           # Sidebar panel UI structure\n│   ├── sidebar.css            # Sidebar styling (Google design language)\n│   └── sidebar.js             # Sidebar controller: auth, scanning, filtering, download\n└── gcr-fetch-backend/\n    ├── api/\n    │   └── token.js           # Vercel serverless function for OAuth token exchange\n    ├── package.json           # Backend package definition\n    └── vercel.json            # Vercel deployment configuration\n```\n\n---\n\n<a name=\"install\"></a>\n## Installation Guide (For Users)\n\nSince this extension is not published on the Chrome Web Store, you'll need to load it manually in your browser. This takes less than a minute and requires no coding or credentials setup.\n\n### Prerequisites\n- A Chromium-based browser (Google Chrome, Microsoft Edge, Brave, Opera, etc.)\n- The extension folder (downloaded from this repository)\n\n### Step-by-Step Installation\n\n1. **Download the Extension Code**\n   - Click the green **Code** button at the top of this GitHub repository page, and click **Download ZIP**.\n   - Extract the downloaded ZIP file to a folder on your computer (e.g., in your Documents folder).\n\n2. **Open Extensions Management**\n   - In Chrome, open a new tab and go to `chrome://extensions` (or go to **Menu > Extensions > Manage Extensions**).\n\n3. **Enable Developer Mode**\n   - Toggle the **Developer mode** switch in the top-right corner to **ON**.\n\n4. **Load the Extension**\n   - Click the **Load unpacked** button in the top-left corner.\n   - Select the folder you extracted in Step 1 (the one containing the `manifest.json` file).\n   - Click **Select Folder**.\n\n5. **Pin the Extension (Optional)**\n   - Click the puzzle piece icon in the top-right corner of your browser toolbar, find **GCR Fetch**, and click the pin icon.\n\n6. **Start Using It**\n   - Go to [Google Classroom](https://classroom.google.com).\n   - Open any course page.\n   - You will see a floating **⬇ GCR Fetch** button in the bottom-right corner. Click it to open the sidebar, log in, and scan your course resources!\n\n> [!NOTE]\n> **No Developer Setup Needed**: The extension is already pre-configured to use our secure, hosted backend and Google OAuth Client credentials. You only need to sign in using your university `@isb.nu.edu.pk` email address to use it.\n\n---\n\n<a name=\"dev-setup\"></a>\n## Deployment & Setup Guide (For Developers & Self-Hosters)\n\nIf you are a developer who has forked this repository and wants to run your own custom instance of GCR Fetch with your own Google Cloud project and hosting backend, follow the instructions below.\n\n### 1. Backend Deployment (Vercel)\nThe extension securely exchanges authorization codes for API tokens using a serverless backend to keep client secrets safe.\n1. Navigate to the backend folder:\n   ```bash\n   cd gcr-fetch-backend\n   ```\n2. Install the Vercel CLI globally (if you haven't already):\n   ```bash\n   npm install -g vercel\n   ```\n3. Authenticate and deploy the backend:\n   ```bash\n   vercel login\n   # Run the deployment and link it to your account\n   vercel --prod\n   ```\n   Note down your deployed backend URL (e.g., `https://your-project.vercel.app`).\n\n### 2. Google Cloud Platform Configuration\n1. Go to the [Google Cloud Console](https://console.cloud.google.com/).\n2. Create a new project.\n3. Enable the following APIs:\n   - **Google Classroom API**\n   - **Google Drive API**\n4. Set up your **OAuth Consent Screen**:\n   - Set the User Type to **Internal** (if deploying within your university/organization domain) or **External** (if deploying publicly).\n   - Add the necessary scopes: `classroom.courses.readonly`, `classroom.coursework.me.readonly`, `classroom.courseworkmaterials.readonly`, `classroom.announcements.readonly`, `drive.readonly`, and `drive.file`.\n5. Create credentials:\n   - Click **Create Credentials > OAuth client ID**.\n   - Select **Web application** as the application type.\n   - Under **Authorized redirect URIs**, add `https://<YOUR_CHROME_EXTENSION_ID>.chromiumapp.org` (replace with your extension's ID, which you can find in `chrome://extensions` after loading it).\n   - Copy the generated **Client ID** and **Client Secret**.\n\n### 3. Configure Environment Variables\nIn your Vercel project dashboard (Settings > Environment Variables), add the following:\n- `GCR_CLIENT_ID`: Your Google OAuth Client ID.\n- `GCR_CLIENT_SECRET`: Your Google OAuth Client Secret.\n\nRedeploy the backend to apply these variables:\n```bash\nvercel --prod --force\n```\n\n### 4. Update Extension Code Configurations\nIn your local repository, configure the following:\n\n- **In [background.js](file:///e:/gcr-resources-fetch/background.js)**:\n  - Update `CLIENT_ID` with your new Google Client ID.\n  - Update `EXTENSION_ID` with your local extension ID.\n  - Update `BACKEND_URL` with your Vercel deployment URL.\n\n- **In [gcr-fetch-backend/api/token.js](file:///e:/gcr-resources-fetch/gcr-fetch-backend/api/token.js)**:\n  - Update `EXTENSION_ID` to match your extension ID (used for CORS policy verification).\n\n---\n\n## Permissions Explained\n\n| Permission | Why It's Needed |\n|---|---|\n| `identity` | Required for `chrome.identity.launchWebAuthFlow` to open the Google OAuth consent popup |\n| `scripting` | Used to inject the floating button and sidebar into Google Classroom pages |\n| `downloads` | Triggers the browser file download for the generated ZIP archive |\n| `storage` | Stores OAuth tokens and user info in `chrome.storage.local` (sandboxed to this extension) |\n| `classroom.google.com/*` | Content script injection + DOM scraping for resource detection |\n| `classroom.googleapis.com/*` | Google Classroom REST API calls for comprehensive resource discovery |\n| `www.googleapis.com/*` | Google Drive API for file downloads and format conversion |\n| `drive.google.com/*` | Parsing Drive URLs and detecting file/folder types |\n| `docs.google.com/*` | Parsing Google Docs/Sheets/Slides URLs for export |\n\n---\n\n## Tech Stack\n\n| Component | Technology |\n|---|---|\n| Extension | Chrome Manifest V3, Vanilla JavaScript |\n| UI | Custom HTML/CSS/JS (Google-style design), no frameworks |\n| Authentication | OAuth 2.0 via `chrome.identity.launchWebAuthFlow` |\n| Backend | Vercel Serverless Functions (Node.js) |\n| ZIP Generation | [JSZip](https://stuk.github.io/jszip/) |\n| File Conversion | Google Drive API export endpoints (Docs → DOCX/PDF, Sheets → XLSX, Slides → PPTX) |\n| External Resources Dashboard | Self-contained HTML with CSS, search, filtering, dark/light mode |\n\n---\n\n## Security Architecture\n\nGCR Fetch was designed with a security-first mindset:\n\n- **No `innerHTML`/`outerHTML`** — Every DOM manipulation uses `createElement`, `setAttribute`, `textContent`, and `appendChild`. This eliminates XSS vectors entirely.\n- **Client secret never touches the extension** — The OAuth client secret is stored exclusively as a Vercel environment variable and is never included in the extension source code.\n- **HTTPS-only, origin-restricted fetch proxy** — The `FETCH_WITH_AUTH` handler in `background.js` enforces an allowlist of allowed Google API origins. Non-HTTPS URLs and off-origin requests are rejected.\n- **Filename sanitization** — All filenames are sanitized at multiple layers (content script, fetcher, zipper) to prevent directory traversal attacks within the ZIP archive. Path segments with `..` are rejected, and characters are restricted to an alphanumeric allowlist.\n- **Token storage** — OAuth tokens are stored in `chrome.storage.local`, which is sandboxed to the extension and inaccessible to web pages. Tokens are never logged or transmitted to third parties.\n- **CORS restriction** — The Vercel backend sets `Access-Control-Allow-Origin` to the specific Chrome extension origin only. No other origin can call the token endpoint.\n- **Content Security Policy** — The sidebar HTML includes a strict CSP meta tag that limits resource loading to `self`, Google Fonts, and Google Drive thumbnails.\n\n---\n\n## License\n\nThis project is licensed under the [MIT License](LICENSE).\n\n---\n\n<p align=\"center\">\n  Built for students, by a student who got tired of clicking \"Download\" 47 times.\n</p>\n",
+      "LICENSE": "MIT License\n\nCopyright (c) 2026 Muhammad Ammar Asad\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    "package_json": null,
+    "frameworks": [],
+    "libraries": [],
+    "test_files": [],
+    "has_tests": false,
+    "ci_files": [],
+    "has_ci": false,
+    "docker_files": [],
+    "has_docker": false,
+    "env_files": [],
+    "dir_tree": "./\n  .gitignore\n  LICENSE\n  README.md\n  background.js\n  content.js\n  manifest.json\n  gcr-fetch-backend/\n    .gitignore\n    package.json\n    vercel.json\n    api/\n  icons/\n    icon128.png\n    icon16.png\n    icon48.png\n  lib/\n    fetcher.js\n    jszip.min.js\n    zipper.js\n  sidebar/\n    sidebar.css\n    sidebar.html\n    sidebar.js",
+    "commit_stats": {
+      "commit_count_available": 32,
+      "recent_commits": [
+        {
+          "hash": "9add768",
+          "date": "2026-06-06",
+          "subject": "Fix SyntaxError by removing duplicate origin declaration in backend"
+        },
+        {
+          "hash": "55e3802",
+          "date": "2026-06-06",
+          "subject": "Improve CORS handling and Firefox browser detection using User-Agent as backup"
+        },
+        {
+          "hash": "c3e3f0f",
+          "date": "2026-06-06",
+          "subject": "Add Vercel backend URL to manifest host_permissions"
+        },
+        {
+          "hash": "2dcdc39",
+          "date": "2026-06-06",
+          "subject": "Add Firefox extension support and update Vercel backend token exchange"
+        },
+        {
+          "hash": "f448ff3",
+          "date": "2026-06-04",
+          "subject": "docs: update README installation guide for clarity"
+        },
+        {
+          "hash": "f1f756c",
+          "date": "2026-06-04",
+          "subject": "docs: add quick navigation links at the top of README"
+        },
+        {
+          "hash": "b3f9291",
+          "date": "2026-06-04",
+          "subject": "docs: restructure installation instructions for users vs developers"
+        },
+        {
+          "hash": "e55f0db",
+          "date": "2026-06-04",
+          "subject": "docs: add MIT license and update README link"
+        },
+        {
+          "hash": "f2405c6",
+          "date": "2026-06-04",
+          "subject": "docs: rewrite README to provide comprehensive feature overview and architectural documentation"
+        },
+        {
+          "hash": "25b4ce4",
+          "date": "2026-06-04",
+          "subject": "fix(backend): update EXTENSION_ID to match new locked extension ID"
+        },
+        {
+          "hash": "5dd2d83",
+          "date": "2026-06-04",
+          "subject": "chore: Update OAuth Client ID to new university project credentials"
+        },
+        {
+          "hash": "501f34c",
+          "date": "2026-06-04",
+          "subject": "chore: Set locked manifest key, update extension ID, and ignore local key/zip tools"
+        },
+        {
+          "hash": "3de4c3b",
+          "date": "2026-06-04",
+          "subject": "feat: Exclude noisy Google subdomains from link scanning and revert individual .url file generation"
+        },
+        {
+          "hash": "bc8bea0",
+          "date": "2026-06-04",
+          "subject": "feat: Add individual .url shortcut files inside the ZIP and align download progress totals"
+        },
+        {
+          "hash": "e52d2a1",
+          "date": "2026-06-04",
+          "subject": "feat: Scrape external links from DOM and extract links from plaintext post descriptions"
+        },
+        {
+          "hash": "bdd0493",
+          "date": "2026-06-04",
+          "subject": "feat: Replace DOCX export with interactive HTML Dashboard for external resources"
+        },
+        {
+          "hash": "af8ecce",
+          "date": "2026-06-04",
+          "subject": "checkout: temporary commit for worktree checkout"
+        },
+        {
+          "hash": "baa980e",
+          "date": "2026-06-04",
+          "subject": "Add styles.xml and override definition for absolute MS Word docx compatibility"
+        },
+        {
+          "hash": "4f4c163",
+          "date": "2026-06-04",
+          "subject": "Fix DOCX corruption by removing leading XML newlines, renaming rel IDs, and fixing XML escapes"
+        },
+        {
+          "hash": "bb792b3",
+          "date": "2026-06-04",
+          "subject": "Index external resources and compile to DOCX"
+        },
+        {
+          "hash": "4b55f54",
+          "date": "2026-06-03",
+          "subject": "Add option to download student coursework submissions ('Your Work')"
+        },
+        {
+          "hash": "d081fd4",
+          "date": "2026-06-03",
+          "subject": "Ignore zip files in .gitignore"
+        },
+        {
+          "hash": "72790ac",
+          "date": "2026-06-03",
+          "subject": "Clean up redundant debug error messages and try-catch in convertAndFetchPdfBlob"
+        },
+        {
+          "hash": "3d3bc74",
+          "date": "2026-06-02",
+          "subject": "Fix showToast undefined in zipper, disable silent fallback"
+        },
+        {
+          "hash": "b8a2f73",
+          "date": "2026-06-02",
+          "subject": "Fix alerts blocked by iframe sandbox, use showToast instead"
+        },
+        {
+          "hash": "46754f0",
+          "date": "2026-06-02",
+          "subject": "Fix isConvertibleToPdf failing on DOM files and missing extensions"
+        },
+        {
+          "hash": "6a593e7",
+          "date": "2026-06-02",
+          "subject": "Add error alert and supportsAllDrives to PDF conversion"
+        },
+        {
+          "hash": "507f301",
+          "date": "2026-06-02",
+          "subject": "feat: Add PDF conversion feature via Google Drive API"
+        },
+        {
+          "hash": "20a8f9d",
+          "date": "2026-06-02",
+          "subject": "Fix empty ZIP by using Drive API v3 endpoint instead of drive.google.com/uc"
+        },
+        {
+          "hash": "4c962c5",
+          "date": "2026-06-02",
+          "subject": "Fix 404 by decoding base64 course IDs from URLs"
+        }
+      ],
+      "contributors": {
+        "Muhammad Ammar Asad": 32
+      },
+      "first_commit_date": "2026-06-02",
+      "last_commit_date": "2026-06-06"
+    },
+    "readme_excerpt": "# GCR Fetch — Google Classroom Resource Downloader\n\n<p align=\"center\">\n  <strong>Bulk-download every resource from a Google Classroom course as a single ZIP archive.</strong>\n</p>\n\n<p align=\"center\">\n  <a href=\"#install\"><strong>🚀 Quick Install Guide (For Users)</strong></a> &nbsp;•&nbsp; \n  <a href=\"#dev-setup\"><strong>🛠️ Developer Setup & Self-Hosting</strong></a>\n</p>\n\n---\n\n## The Problem\n\nIf you've ever used Google Classroom during exam season, you know the pain. Teachers share resources — PDFs, slides, documents, spreadsheets — across dozens of posts, announcements, and classwork items throughout the semester. When exam day approaches and you finally sit down to study, you realize you need to download all of them first. That means scrolling through the entire classroom feed, from the oldest post at the bottom to the newest at the top, hunting for every attachment one by one.\n\nThis process is slow, tedious, and disorganized. A typical course with a semester's worth of material can easily take 20–25 minutes of manual clicking and downloading. Worse, it becomes a procrastination trigger — the friction of \"I have to download everything first\" is enough to push students away from preparing for their exams entirely. Resources are scattered across Stream posts, Classwork topics, and announcements with no centralized way to grab them all.\n\n**GCR Fetch eliminates this entirely.** One click scans your entire course and bundles every downloadable resource into a single ZIP file.\n\n---\n\n## Overview\n\nGCR Fetch is a Chrome extension (Manifest V3) that integrates directly into Google Classroom. When you open a course page, a floating \"GCR Fetch\" button appears. Clicking it opens a sidebar panel where you can:\n\n- **Sign in** with your Google account (OAuth 2.0, works with any Google account regardless of your Chrome profile)\n- **Scan** the course for all resources using a hybrid detection approach (DOM scraping + Google Classroom API)\n- **Browse, filter, and select** which files to download\n- **Download** everything as a neatly organized ZIP archive\n\nThe extension also handles non-downloadable resources (YouTube links, Google Forms, Drive folders, external URLs) by generating a polished, interactive **External Resources Dashboard** — an HTML file included in the ZIP with search, filtering, and one-click copy/open functionality.\n\n---\n\n## Key Features\n\n| Feature | Description |\n|---|---|\n| **Hybrid Resource Detection** | Combines DOM scraping (finds what's visible on the page) with Google Classroom REST API calls (finds attachments behind \"See more\", in collapsed topics, or in unexpanded classwork). No resource goes undetected. |\n| **Smart File Conversion** | Google Docs, Sheets, Slides, and Drawings are automatically exported to their Microsoft Office equivalents (`.docx`, `.xlsx`, `.pptx`) or as PDFs. Optionally convert all documents to PDF with one toggle. |\n| **Organized ZIP Archives** | Choose between a flat file structure or a categorized structure that ",
+    "observations": [
+      "No test files detected — gap to flag in portfolio narrative.",
+      "No CI detected.",
+      "No Dockerfile (acceptable for frontend-focused repos).",
+      "No .env.example found.",
+      "Has LICENSE file.",
+      "README length: 17233 chars. Badges: False. Screenshots: False. Install section: True. Architecture section: True."
+    ],
+    "source_to_config_ratio": 3.0,
+    "docs_to_source_ratio": 0.222
+  },
+  {
+    "slug": "06_internship_finder",
+    "name": "Internship-Finder",
+    "path": "/home/z/my-project/repos/Internship-Finder",
+    "total_files": 158,
+    "languages": {
+      "TypeScript": 74,
+      "Markdown": 27,
+      "TypeScript (React)": 22,
+      "CSS": 12,
+      "Other": 10,
+      "SQL": 7,
+      "JSON": 3,
+      "Python": 1,
+      "JavaScript (ESM)": 1,
+      "TOML": 1
+    },
+    "categories": {
+      "docs": 27,
+      "config": 4,
+      "source": 117,
+      "other": 10
+    },
+    "lines_by_language": {
+      "TypeScript": 3389,
+      "TypeScript (React)": 1089,
+      "CSS": 861,
+      "SQL": 243,
+      "JavaScript (ESM)": 16,
+      "Python": 12
+    },
+    "total_source_lines": 5610,
+    "largest_files": [
+      {
+        "path": "package-lock.json",
+        "size": 261189,
+        "language": "JSON",
+        "category": "config"
+      },
+      {
+        "path": "WORKLOG.md",
+        "size": 28372,
+        "language": "Markdown",
+        "category": "docs"
+      },
+      {
+        "path": "src/app/favicon.ico",
+        "size": 25931,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "supabase/config.toml",
+        "size": 15558,
+        "language": "TOML",
+        "category": "config"
+      },
+      {
+        "path": "PHASE_14_ARCHITECTURE.md",
+        "size": 14306,
+        "language": "Markdown",
+        "category": "docs"
+      },
+      {
+        "path": "PHASE_15_ARCHITECTURE.md",
+        "size": 10691,
+        "language": "Markdown",
+        "category": "docs"
+      },
+      {
+        "path": "database-design.md",
+        "size": 10282,
+        "language": "Markdown",
+        "category": "docs"
+      },
+      {
+        "path": "PHASE_16_ARCHITECTURE.md",
+        "size": 9978,
+        "language": "Markdown",
+        "category": "docs"
+      },
+      {
+        "path": "supabase/migrations/20260618000000_initial_schema.sql",
+        "size": 9571,
+        "language": "SQL",
+        "category": "source"
+      },
+      {
+        "path": "src/lib/supabase/types.ts",
+        "size": 8785,
+        "language": "TypeScript",
+        "category": "source"
+      }
+    ],
+    "key_files_found": {
+      "README.md": "README.md",
+      "package.json": "package.json",
+      "package-lock.json": "package-lock.json",
+      "tsconfig.json": "tsconfig.json",
+      "next.config.ts": "next.config.ts"
+    },
+    "key_file_contents": {
+      "README.md": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n# or\nbun dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.\n\n## Learn More\n\nTo learn more about Next.js, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n\nYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.\n",
+      "package.json": "{\n  \"name\": \"temp-app\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"eslint\"\n  },\n  \"dependencies\": {\n    \"@google/genai\": \"^2.8.0\",\n    \"@hookform/resolvers\": \"^5.4.0\",\n    \"@supabase/ssr\": \"^0.12.0\",\n    \"@supabase/supabase-js\": \"^2.108.2\",\n    \"cheerio\": \"^1.2.0\",\n    \"next\": \"16.2.9\",\n    \"nodemailer\": \"^9.0.1\",\n    \"react\": \"19.2.4\",\n    \"react-dom\": \"19.2.4\",\n    \"react-hook-form\": \"^7.79.0\",\n    \"server-only\": \"^0.0.1\",\n    \"zod\": \"^4.4.3\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^20\",\n    \"@types/nodemailer\": \"^8.0.1\",\n    \"@types/react\": \"^19\",\n    \"@types/react-dom\": \"^19\",\n    \"eslint\": \"^9\",\n    \"eslint-config-next\": \"16.2.9\",\n    \"tsx\": \"^4.22.4\",\n    \"typescript\": \"^5\"\n  }\n}\n",
+      "package-lock.json": "[lock file present]",
+      "tsconfig.json": "{\n  \"compilerOptions\": {\n    \"target\": \"ES2017\",\n    \"lib\": [\"dom\", \"dom.iterable\", \"esnext\"],\n    \"allowJs\": true,\n    \"skipLibCheck\": true,\n    \"strict\": true,\n    \"noEmit\": true,\n    \"esModuleInterop\": true,\n    \"module\": \"esnext\",\n    \"moduleResolution\": \"bundler\",\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true,\n    \"jsx\": \"react-jsx\",\n    \"incremental\": true,\n    \"plugins\": [\n      {\n        \"name\": \"next\"\n      }\n    ],\n    \"paths\": {\n      \"@/*\": [\"./src/*\"],\n      \"server-only\": [\"./src/mocks/server-only-mock.ts\"]\n    }\n  },\n  \"include\": [\n    \"next-env.d.ts\",\n    \"**/*.ts\",\n    \"**/*.tsx\",\n    \".next/types/**/*.ts\",\n    \".next/dev/types/**/*.ts\",\n    \"**/*.mts\"\n  ],\n  \"exclude\": [\"node_modules\"]\n}\n",
+      "next.config.ts": "import type { NextConfig } from \"next\";\n\nconst nextConfig: NextConfig = {\n  /* config options here */\n};\n\nexport default nextConfig;\n"
+    },
+    "package_json": {
+      "name": "temp-app",
+      "version": "0.1.0",
+      "private": true,
+      "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint"
+      },
+      "dependencies": {
+        "@google/genai": "^2.8.0",
+        "@hookform/resolvers": "^5.4.0",
+        "@supabase/ssr": "^0.12.0",
+        "@supabase/supabase-js": "^2.108.2",
+        "cheerio": "^1.2.0",
+        "next": "16.2.9",
+        "nodemailer": "^9.0.1",
+        "react": "19.2.4",
+        "react-dom": "19.2.4",
+        "react-hook-form": "^7.79.0",
+        "server-only": "^0.0.1",
+        "zod": "^4.4.3"
+      },
+      "devDependencies": {
+        "@types/node": "^20",
+        "@types/nodemailer": "^8.0.1",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "eslint": "^9",
+        "eslint-config-next": "16.2.9",
+        "tsx": "^4.22.4",
+        "typescript": "^5"
+      },
+      "engines": {},
+      "type": null
+    },
+    "frameworks": [
+      "Next.js 16.2.9 (App Router)",
+      "React 19.2.4"
+    ],
+    "libraries": [
+      "Supabase",
+      "Zod",
+      "React Hook Form",
+      "TypeScript ^5",
+      "ESLint"
+    ],
+    "test_files": [],
+    "has_tests": false,
+    "ci_files": [],
+    "has_ci": false,
+    "docker_files": [],
+    "has_docker": false,
+    "env_files": [],
+    "dir_tree": "./\n  .gitignore\n  .rules\n  AGENTS.md\n  CLAUDE.md\n  CURRENT_STATE.md\n  EXECUTIVE_SUMMARY.md\n  FIRST_RUN_CHECKLIST.md\n  FIRST_RUN_POSTMORTEM_TEMPLATE.md\n  NEXT_PHASE.md\n  PHASE_13A_FIX_PROMPT.md\n  PHASE_13_ARCHITECTURE.md\n  PHASE_14_ARCHITECTURE.md\n  PHASE_15_ARCHITECTURE.md\n  PHASE_16_ARCHITECTURE.md\n  PHASE_17_ARCHITECTURE.md\n  ... +21 more files\n  public/\n    file.svg\n    globe.svg\n    next.svg\n    vercel.svg\n    window.svg\n  src/\n    middleware.ts\n    app/\n    features/\n    lib/\n    mocks/\n    scripts/\n  supabase/\n    .gitignore\n    config.toml\n    migrations/",
+    "commit_stats": {
+      "commit_count_available": 53,
+      "recent_commits": [
+        {
+          "hash": "905eb12",
+          "date": "2026-06-21",
+          "subject": "fix: upgrade worker runtime to node 22"
+        },
+        {
+          "hash": "e969175",
+          "date": "2026-06-21",
+          "subject": "fix: restore dashboard navigation and protect onboarding"
+        },
+        {
+          "hash": "68a31e9",
+          "date": "2026-06-21",
+          "subject": "fix: grant authenticated role access to user tables"
+        },
+        {
+          "hash": "e21f165",
+          "date": "2026-06-21",
+          "subject": "fix: remove react-dom server rendering from notifications"
+        },
+        {
+          "hash": "0c5109d",
+          "date": "2026-06-20",
+          "subject": "fix: migrate schema to gen_random_uuid and deploy production database"
+        },
+        {
+          "hash": "9c3f181",
+          "date": "2026-06-20",
+          "subject": "docs: prepare production bootstrap package"
+        },
+        {
+          "hash": "d5f5679",
+          "date": "2026-06-20",
+          "subject": "docs: plan phase 18 production bootstrap"
+        },
+        {
+          "hash": "468e724",
+          "date": "2026-06-20",
+          "subject": "docs: update continuity after phase 17 completion"
+        },
+        {
+          "hash": "eba1d70",
+          "date": "2026-06-20",
+          "subject": "feat: implement phase 17 feedback learning loop"
+        },
+        {
+          "hash": "287de3c",
+          "date": "2026-06-20",
+          "subject": "docs: plan phase 17 feedback learning loop"
+        },
+        {
+          "hash": "6436eb0",
+          "date": "2026-06-20",
+          "subject": "docs: update continuity after phase 16 completion"
+        },
+        {
+          "hash": "4f56afc",
+          "date": "2026-06-20",
+          "subject": "feat: implement phase 16 notifications system"
+        },
+        {
+          "hash": "b4e0535",
+          "date": "2026-06-19",
+          "subject": "docs: update continuity after phase 15 completion"
+        },
+        {
+          "hash": "e0112f9",
+          "date": "2026-06-19",
+          "subject": "feat: implement phase 15 worker decoupling"
+        },
+        {
+          "hash": "ed1b0c0",
+          "date": "2026-06-19",
+          "subject": "docs: update continuity after phase 14 completion"
+        },
+        {
+          "hash": "3c6670e",
+          "date": "2026-06-19",
+          "subject": "feat: complete phase 14 recommendation ui"
+        },
+        {
+          "hash": "820922a",
+          "date": "2026-06-19",
+          "subject": "feat: partial phase 14 recommendation ui implementation"
+        },
+        {
+          "hash": "c10a06d",
+          "date": "2026-06-19",
+          "subject": "docs: update continuity after phase 13 completion"
+        },
+        {
+          "hash": "a32b02d",
+          "date": "2026-06-19",
+          "subject": "feat: implement phase 13 matching engine"
+        },
+        {
+          "hash": "cc8b267",
+          "date": "2026-06-19",
+          "subject": "docs: refresh continuity after phase 13 audit failure"
+        },
+        {
+          "hash": "6d6cf46",
+          "date": "2026-06-19",
+          "subject": "docs: prepare project continuity and account transition handoff"
+        },
+        {
+          "hash": "ade8d26",
+          "date": "2026-06-19",
+          "subject": "docs: final handoff before account transition"
+        },
+        {
+          "hash": "53e2edd",
+          "date": "2026-06-19",
+          "subject": "docs: update continuity after phase 13 architecture review"
+        },
+        {
+          "hash": "b02e153",
+          "date": "2026-06-19",
+          "subject": "docs: refine phase 13 architecture after scalability audit"
+        },
+        {
+          "hash": "d8fbd99",
+          "date": "2026-06-19",
+          "subject": "docs: update continuity after phase 12"
+        },
+        {
+          "hash": "9d4c7be",
+          "date": "2026-06-19",
+          "subject": "feat: integrate gemini research brain with caching and structured outputs"
+        },
+        {
+          "hash": "0161855",
+          "date": "2026-06-19",
+          "subject": "docs: update continuity after application url hotfix"
+        },
+        {
+          "hash": "4ad0323",
+          "date": "2026-06-19",
+          "subject": "fix: persist application url through internship pipeline"
+        },
+        {
+          "hash": "2f23388",
+          "date": "2026-06-19",
+          "subject": "docs: refresh project continuity before account transition"
+        },
+        {
+          "hash": "0b25221",
+          "date": "2026-06-18",
+          "subject": "docs: update continuity after persistence pipeline"
+        }
+      ],
+      "contributors": {
+        "Muhammad Ammar Asad": 53
+      },
+      "first_commit_date": "2026-06-18",
+      "last_commit_date": "2026-06-21"
+    },
+    "readme_excerpt": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n# or\nbun dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.\n\n## Learn More\n\nTo learn more about Next.js, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n\nYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.\n",
+    "observations": [
+      "Has lint script (code quality discipline).",
+      "Has build script.",
+      "Has dev script.",
+      "No test files detected — gap to flag in portfolio narrative.",
+      "No CI detected.",
+      "No Dockerfile (acceptable for frontend-focused repos).",
+      "No .env.example found.",
+      "No LICENSE file (fine for personal projects, matters for OSS positioning).",
+      "README length: 1450 chars. Badges: False. Screenshots: False. Install section: False. Architecture section: False."
+    ],
+    "source_to_config_ratio": 29.25,
+    "docs_to_source_ratio": 0.231
+  },
+  {
+    "slug": "07_wayfinder",
+    "name": "WayFinder",
+    "path": "/home/z/my-project/repos/WayFinder",
+    "total_files": 48,
+    "languages": {
+      "TypeScript": 12,
+      "TypeScript (React)": 12,
+      "CSS": 11,
+      "Other": 8,
+      "JSON": 3,
+      "Markdown": 1,
+      "JavaScript (ESM)": 1
+    },
+    "categories": {
+      "other": 8,
+      "docs": 1,
+      "config": 3,
+      "source": 36
+    },
+    "lines_by_language": {
+      "CSS": 2019,
+      "TypeScript (React)": 1741,
+      "TypeScript": 930,
+      "JavaScript (ESM)": 16
+    },
+    "total_source_lines": 4706,
+    "largest_files": [
+      {
+        "path": "wayfinder-app/package-lock.json",
+        "size": 218055,
+        "language": "JSON",
+        "category": "config"
+      },
+      {
+        "path": "wayfinder-app/app/favicon.ico",
+        "size": 25931,
+        "language": "Other",
+        "category": "other"
+      },
+      {
+        "path": "wayfinder-app/app/place/[placeId]/page.tsx",
+        "size": 20853,
+        "language": "TypeScript (React)",
+        "category": "source"
+      },
+      {
+        "path": "wayfinder-app/app/globals.css",
+        "size": 12054,
+        "language": "CSS",
+        "category": "source"
+      },
+      {
+        "path": "wayfinder-app/app/home/page.tsx",
+        "size": 11233,
+        "language": "TypeScript (React)",
+        "category": "source"
+      },
+      {
+        "path": "wayfinder-app/app/place/[placeId]/page.module.css",
+        "size": 8622,
+        "language": "CSS",
+        "category": "source"
+      },
+      {
+        "path": "wayfinder-app/components/SearchBar.tsx",
+        "size": 7589,
+        "language": "TypeScript (React)",
+        "category": "source"
+      },
+      {
+        "path": "wayfinder-app/app/profile/page.tsx",
+        "size": 6455,
+        "language": "TypeScript (React)",
+        "category": "source"
+      },
+      {
+        "path": "wayfinder-app/components/WelcomeScreen.tsx",
+        "size": 6105,
+        "language": "TypeScript (React)",
+        "category": "source"
+      },
+      {
+        "path": "wayfinder-app/lib/google-maps.ts",
+        "size": 5778,
+        "language": "TypeScript",
+        "category": "source"
+      }
+    ],
+    "key_files_found": {},
+    "key_file_contents": {},
+    "package_json": null,
+    "frameworks": [],
+    "libraries": [],
+    "test_files": [],
+    "has_tests": false,
+    "ci_files": [],
+    "has_ci": false,
+    "docker_files": [],
+    "has_docker": false,
+    "env_files": [],
+    "dir_tree": "./\n  .gitignore\n  wayfinder-app/\n    .gitignore\n    README.md\n    eslint.config.mjs\n    next.config.ts\n    package-lock.json\n    package.json\n    tsconfig.json\n    app/\n    components/\n    lib/\n    public/",
+    "commit_stats": {
+      "commit_count_available": 5,
+      "recent_commits": [
+        {
+          "hash": "e8ddf6e",
+          "date": "2026-06-10",
+          "subject": "Merge pull request #1 from ammarasad2005/main"
+        },
+        {
+          "hash": "bf8f4c8",
+          "date": "2026-06-10",
+          "subject": "feat(yango): align redirect URL parameters and fallback with official documentation"
+        },
+        {
+          "hash": "0267a6c",
+          "date": "2026-06-10",
+          "subject": "fix: omit starting coordinates in Yango deep link to prevent tariff loading hangs"
+        },
+        {
+          "hash": "6205b59",
+          "date": "2026-06-09",
+          "subject": "chore: ignore Vercel local folders in git"
+        },
+        {
+          "hash": "cb3e232",
+          "date": "2026-06-09",
+          "subject": "init: Wayfinder App v1.0"
+        }
+      ],
+      "contributors": {
+        "Muhammad Ammar Asad": 1,
+        "Ammar Asad": 4
+      },
+      "first_commit_date": "2026-06-09",
+      "last_commit_date": "2026-06-10"
+    },
+    "readme_excerpt": "",
+    "observations": [
+      "No test files detected — gap to flag in portfolio narrative.",
+      "No CI detected.",
+      "No Dockerfile (acceptable for frontend-focused repos).",
+      "No .env.example found.",
+      "No LICENSE file (fine for personal projects, matters for OSS positioning).",
+      "No README file detected — significant portfolio gap."
+    ],
+    "source_to_config_ratio": 12.0,
+    "docs_to_source_ratio": 0.028
+  }
+]

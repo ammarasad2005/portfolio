@@ -5,23 +5,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useObservatoryStore } from '@/lib/store';
 
 /**
- * LoadingScreen — "Calibrating telescope" sequence.
- * Per phase9_ux_design.md §4.1.
+ * LoadingScreen — "Initializing journey" orbit-ring sequence.
  *
  * CSS-only sequence:
  *   0–200ms    blank deep navy
- *   200–600ms  telescope barrel silhouette fades in (horizontal line)
- *   600–1500ms barrel tilts 30°; "Calibrating telescope…" text fades in
- *   1500–2500ms "Locating constellations…" text swap
- *   2500–3500ms "Ready." text + barrel rotates to point upward
+ *   200–600ms  orbit ring fades in
+ *   600–1500ms orbiting satellite dot begins; "Initializing journey…" text
+ *   1500–2500ms "Charting the orbit…" text swap
+ *   2500–3500ms "Ready." text
  *   3500ms      fade out
  *
  * Fallback: if prefers-reduced-motion, show a static centered icon + name.
  */
 const PHASES = [
   { delay: 0,    text: '' },
-  { delay: 600,  text: 'Calibrating telescope…' },
-  { delay: 1500, text: 'Locating constellations…' },
+  { delay: 600,  text: 'Initializing journey…' },
+  { delay: 1500, text: 'Charting the orbit…' },
   { delay: 2500, text: 'Ready.' },
 ] as const;
 
@@ -68,9 +67,7 @@ export function LoadingScreen() {
   if (!visible) return null;
 
   const text = PHASES[phaseIndex].text;
-  const barrelRotate =
-    phaseIndex >= 3 ? -90 : phaseIndex >= 1 ? 30 : 0;
-  const barrelOpacity = phaseIndex >= 1 ? 1 : 0;
+  const ringOpacity = phaseIndex >= 1 ? 1 : 0;
 
   return (
     <AnimatePresence>
@@ -84,24 +81,35 @@ export function LoadingScreen() {
         aria-live="polite"
         aria-label={text || 'Loading portfolio'}
       >
-        {/* Telescope barrel — a tilted line + circle (lens). */}
+        {/* Orbit ring — a circle with a small satellite dot orbiting it. */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: barrelOpacity }}
+          animate={{ opacity: ringOpacity }}
           transition={{ duration: 0.4 }}
           className="relative h-32 w-32 flex items-center justify-center"
         >
+          {/* Orbit ring */}
+          <div
+            className="absolute h-24 w-24 rounded-full border border-[var(--border-strong)]"
+            aria-hidden="true"
+          />
+          {/* Central planet (Earth) */}
+          <div
+            className="absolute h-3 w-3 rounded-full bg-[var(--text-primary)]"
+            style={{ boxShadow: '0 0 10px 2px rgba(74, 144, 226, 0.6)' }}
+            aria-hidden="true"
+          />
+          {/* Orbiting satellite dot */}
           <motion.div
-            animate={{ rotate: barrelRotate }}
-            transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
-            className="relative h-24 w-24 flex items-center justify-center"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 2.4, ease: 'linear', repeat: Infinity }}
+            className="absolute h-24 w-24"
+            aria-hidden="true"
           >
-            {/* Barrel line */}
-            <div className="absolute h-px w-20 bg-gradient-to-r from-transparent via-[var(--text-secondary)] to-[var(--text-primary)]" />
-            {/* Lens circle */}
-            <div className="absolute -right-1 h-3 w-3 rounded-full border border-[var(--text-primary)] bg-[rgba(245,240,225,0.1)]" />
-            {/* Mount point */}
-            <div className="absolute -left-1 h-1.5 w-1.5 rounded-full bg-[var(--text-secondary)]" />
+            <div
+              className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-[var(--accent-sunset)]"
+              style={{ boxShadow: '0 0 8px 2px rgba(255, 107, 53, 0.7)' }}
+            />
           </motion.div>
         </motion.div>
 

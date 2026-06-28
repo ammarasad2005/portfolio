@@ -17,8 +17,8 @@ export function HeroText() {
 
   const lines = [
     'A curious engineer',
-    'at a quiet observatory,',
-    'charting constellations of work.',
+    'on a pale blue dot,',
+    "charting what's next.",
   ];
 
   return (
@@ -48,7 +48,7 @@ export function HeroText() {
         transition={{ duration: 0.8, delay: baseDelay + 0.9, ease: [0.16, 1, 0.3, 1] }}
         className="mt-10 font-body text-[var(--text-secondary)] text-[15px] md:text-[16px] tracking-[0.04em] uppercase"
       >
-        Scroll to enter. ↓
+        Scroll to travel. ↓
       </motion.p>
     </div>
   );

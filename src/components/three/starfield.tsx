@@ -9,13 +9,12 @@ interface StarfieldProps {
 }
 
 /**
- * Starfield — 300 (200 on mobile) point sprites in a large sphere shell.
- * Per phase10_3d_experience.md §5.1.
+ * Starfield — 200 (120 on touch) point sprites in a large sphere shell.
  *
- * Single draw call via THREE.Points. Custom shader: per-star twinkle
- * (random phase, sine wave opacity), size attenuation, 5% sunset tint.
+ * Single draw call via THREE.Points. Custom shader: soft per-star twinkle
+ * (random phase, sine wave opacity 0.7–1.0), size attenuation, 5% sunset tint.
  */
-export function Starfield({ count = 300 }: StarfieldProps) {
+export function Starfield({ count = 200 }: StarfieldProps) {
   const pointsRef = useRef<THREE.Points>(null);
   const materialRef = useRef<THREE.ShaderMaterial>(null);
 
@@ -30,8 +29,8 @@ export function Starfield({ count = 300 }: StarfieldProps) {
     const sunset = new THREE.Color('#FF6B35');
 
     for (let i = 0; i < count; i++) {
-      // Distribute in a sphere shell (radius 200–500).
-      const r = 200 + Math.random() * 300;
+      // Distribute in a large sphere shell (radius 300–800).
+      const r = 300 + Math.random() * 500;
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos(2 * Math.random() - 1);
       positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
@@ -48,9 +47,9 @@ export function Starfield({ count = 300 }: StarfieldProps) {
       // Size 0.5–2.0, varying.
       sizes[i] = 0.5 + Math.random() * 1.5;
 
-      // Random twinkle phase + period (3–8s).
+      // Random twinkle phase + period (5–10s, soft).
       phases[i] = Math.random() * Math.PI * 2;
-      periods[i] = 3 + Math.random() * 5;
+      periods[i] = 5 + Math.random() * 5;
     }
     return { positions, colors, sizes, phases, periods };
   }, [count]);
@@ -112,7 +111,8 @@ export function Starfield({ count = 300 }: StarfieldProps) {
           varying float vAlpha;
           void main() {
             vColor = color;
-            float twinkle = 0.55 + 0.45 * sin(uTime * 6.28318 / period + phase);
+            // Soft twinkle — opacity oscillates 0.7–1.0.
+            float twinkle = 0.85 + 0.15 * sin(uTime * 6.28318 / period + phase);
             vAlpha = twinkle;
             vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
             // Size attenuation based on distance.

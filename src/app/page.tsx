@@ -50,7 +50,7 @@ export default function Home() {
       className={`relative bg-observatory text-[var(--text-primary)] min-h-screen vignette-overlay grain-overlay ${
         reducedMotion ? 'scene-static-mode' : ''
       }`}
-      aria-label="Ammar Asad — Observatory Portfolio"
+      aria-label="Ammar Asad — Portfolio"
     >
       {/* Loading screen overlay (fades out after the calibration sequence) */}
       <LoadingScreen />
@@ -76,7 +76,7 @@ export default function Home() {
         {/* Beat 1 — Arrival */}
         <Section
           beat={1}
-          ariaLabel="Beat 1: Arrival at the observatory"
+          ariaLabel="Beat 1: Earth from low orbit"
           className="flex items-center justify-center"
         >
           <HeroText />
@@ -94,7 +94,7 @@ export default function Home() {
         {/* Beat 3 — Exploration */}
         <Section
           beat={3}
-          ariaLabel="Beat 3: Exploration — how to use the telescope"
+          ariaLabel="Beat 3: Entering the satellite belt"
           className="flex items-center justify-center"
         >
           <ExplorationCues />
@@ -117,7 +117,7 @@ export default function Home() {
         {/* Beat 5 — Technical credibility */}
         <Section
           beat={5}
-          ariaLabel="Beat 5: Technical credibility — the engineering stack"
+          ariaLabel="Beat 5: Technical credibility — the stack as orbital debris"
           className="flex items-center"
         >
           <StackMapOverlay />
@@ -126,7 +126,7 @@ export default function Home() {
         {/* Beat 6 — Personality */}
         <Section
           beat={6}
-          ariaLabel="Beat 6: Personality — beyond code"
+          ariaLabel="Beat 6: Moon orbit — personality"
           className="flex items-center"
         >
           <PersonalityPanel />
@@ -135,7 +135,7 @@ export default function Home() {
         {/* Beat 7 — Future ambitions */}
         <Section
           beat={7}
-          ariaLabel="Beat 7: Future ambitions — where the telescope turns next"
+          ariaLabel="Beat 7: Inner solar system — curiosities"
           className="flex items-center"
         >
           <FuturePanel />
@@ -144,7 +144,7 @@ export default function Home() {
         {/* Beat 8 — Contact (with dawn gradient) */}
         <Section
           beat={8}
-          ariaLabel="Beat 8: Contact — how to reach the observer"
+          ariaLabel="Beat 8: Galaxy — contact"
           className="flex items-center"
         >
           <ContactPanel />
@@ -199,10 +199,10 @@ function SrOnlyNarrative() {
       <h1>Muhammad Ammar Asad — Builder in Islamabad</h1>
       <p>Builder in Islamabad, Pakistan. Full-stack web, agentic AI, mobile. CS student at FAST-NUCES Islamabad. Building for communities I'm part of.</p>
 
-      <section aria-label="Beat 1 — Arrival">
-        <h2>Arrival</h2>
-        <p>A curious engineer at a quiet observatory, charting constellations of work.</p>
-        <p>Scroll to enter.</p>
+      <section aria-label="Beat 1 — Earth from low orbit">
+        <h2>Earth from low orbit</h2>
+        <p>A curious engineer on a pale blue dot, charting what&apos;s next.</p>
+        <p>Scroll to travel.</p>
       </section>
 
       <section aria-label="Beat 2 — Introduction">
@@ -215,14 +215,14 @@ function SrOnlyNarrative() {
         <p>Three pillars: full-stack web, agentic AI, mobile. I ship to figure out what I don&apos;t know yet — every project on this site started as a question I couldn&apos;t answer.</p>
       </section>
 
-      <section aria-label="Beat 3 — Exploration">
-        <h2>Exploration</h2>
-        <p>Each constellation is a project. Scroll to fly closer. Hover to preview. Click to focus.</p>
+      <section aria-label="Beat 3 — Entering the satellite belt">
+        <h2>Entering the satellite belt</h2>
+        <p>Each satellite is a project I launched. Scroll to travel further.</p>
         <p>The Builder (Web pillar). The Agent (AI / ML pillar). The Hand (Mobile pillar).</p>
       </section>
 
-      <section aria-label="Beat 4 — Projects">
-        <h2>Projects — three pillars, seven projects</h2>
+      <section aria-label="Beat 4 — Projects in orbit">
+        <h2>Projects in orbit — three pillars, seven satellites</h2>
         {projects.map((project, i) => (
           <article key={project.id} aria-label={`Project ${i + 1}: ${project.title}`}>
             <h3>{project.title}</h3>
@@ -244,8 +244,8 @@ function SrOnlyNarrative() {
         ))}
       </section>
 
-      <section aria-label="Beat 5 — Technical credibility">
-        <h2>The stack, charted by use</h2>
+      <section aria-label="Beat 5 — Technical credibility — the stack as orbital debris">
+        <h2>The stack, charted by use — orbital debris</h2>
         <p>
           Bright stars = daily tools. Dim stars = I&apos;ve shipped them, but
           they&apos;re not my default.
@@ -253,9 +253,9 @@ function SrOnlyNarrative() {
         <p>Engineering rigor: 2/7 repos tested (Playwright E2E in Exam-Table, scratch tests in hamara-rozgar). 3/7 repos use GitHub Actions for scheduled tasks and background workers, not push-triggered CI/CD. Honest gap: no test/build/deploy pipelines on push or PR yet. Working on it.</p>
       </section>
 
-      <section aria-label="Beat 6 — Personality">
-        <h2>Personality — beyond code</h2>
-        <p>When I&apos;m not building, I&apos;m listening — or writing.</p>
+      <section aria-label="Beat 6 — Moon orbit — personality">
+        <h2>At the Moon — personality</h2>
+        <p>At the Moon, the noise fades. What remains is what I listen to.</p>
         <p>I listen to Brian Eno&apos;s Apollo when I code. The ambient structure — long sustained tones, no sharp edges — matches how I want software to feel. Calm, not anxious. Vast, not cluttered.</p>
         <p>I refactored the Drama-Ghar navigation through the Next.js App Router migration. The transitions didn&apos;t survive the first attempt.</p>
         <p>I got interested in agentic AI because I wanted to build systems that could handle real ambiguity — a plumber query in Roman Urdu, a food label with 50 hidden names for sugar. Single-model systems can&apos;t do that. Multi-agent pipelines can.</p>
@@ -263,15 +263,16 @@ function SrOnlyNarrative() {
         <p>Soundtrack: Brian Eno — Apollo.</p>
       </section>
 
-      <section aria-label="Beat 7 — What I want to understand next">
-        <h2>What I want to understand next</h2>
+      <section aria-label="Beat 7 — Inner solar system — curiosities">
+        <h2>Inner solar system — the questions get bigger</h2>
+        <p>Further out, the questions get bigger.</p>
         <p>Multi-agent coherence: Whether multi-agent systems stay coherent as they scale, or whether they always collapse into single-agent-with-tools. hamara-rozgar has 4 agents. I don&apos;t know what happens at 20.</p>
         <p>Urdu / Roman Urdu NLP: How to build NLP that doesn&apos;t lean on English-centric tokenizers. Two of my projects parse Roman Urdu. I want to understand what&apos;s lost when you force Urdu through English-shaped pipes.</p>
         <p>Offline-first AI: Whether real agents can run on edge devices without cloud dependencies. hamara-rozgar migrated off Google Cloud on purpose. I want to know if that scales beyond a hackathon.</p>
       </section>
 
-      <section aria-label="Beat 8 — Contact">
-        <h2>Thank you for observing.</h2>
+      <section aria-label="Beat 8 — Galaxy — contact">
+        <h2>Thank you for traveling with me.</h2>
         <p>
           If you&apos;d like to talk — about a collaboration, an idea, or just to
           compare notes — I&apos;d be glad to hear from you.

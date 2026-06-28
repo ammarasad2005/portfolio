@@ -30,10 +30,10 @@ export function ExplorationCues() {
         </div>
 
         <h2 className="font-display text-[32px] md:text-[56px] leading-[1.1] tracking-[-0.02em] text-[var(--text-primary)] max-w-3xl mx-auto">
-          Each constellation is a project.
+          Each satellite is a project I launched.
           <br />
           <span className="text-[var(--text-secondary)]">
-            Scroll to fly closer. Hover to preview. Click to focus.
+            Scroll to travel further.
           </span>
         </h2>
 

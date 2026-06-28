@@ -59,7 +59,7 @@ export function ContactPanel() {
         </div>
 
         <h2 className="font-display text-[48px] md:text-[88px] leading-[1.0] tracking-[-0.02em] text-[var(--text-primary)]">
-          Thank you for observing.
+          Thank you for traveling with me.
         </h2>
 
         <p className="mt-8 font-body text-[17px] md:text-[20px] leading-[1.55] text-[var(--text-primary)]/90">
